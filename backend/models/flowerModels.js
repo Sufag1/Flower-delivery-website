@@ -4,9 +4,10 @@ const Schema = mongoose.Schema;
 
 const flowerSchema = new Schema({
     name: {type: String, required: true},
-    description: {type: String},
+    description: {type: String, required: true},
     price: {type: Number, required: true},
-    category: {String, required: true}
-}, { timeStamps: true});
+    category: {type: String, required: true},
+    image: { type: String},
+});
 
 module.exports = mongoose.model('Flower', flowerSchema);

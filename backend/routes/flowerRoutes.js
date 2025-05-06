@@ -20,9 +20,9 @@ router.get('/', getFlowers);
 
 router.get('/:id', getFlower);
 
-router.post('/', createFlower);
+router.post('/', upload.single('image'), createFlower);
 
-router.patch('/:id', updateFlower);
+router.patch('/:id', upload.single('image'), updateFlower);
 
 router.delete('/:id', deleteFlower);
 

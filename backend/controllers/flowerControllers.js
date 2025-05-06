@@ -1,90 +1,96 @@
 const Flower = require('../models/flowerModels');
 const mongoose = require('mongoose');
 
-
-
-// Get all Flowers
+// Get all flowers
 const getFlowers = async (req, res) => {
-    try {
-        const flower = await Flower.find();
-        res.status(200).json(flower)
-    } catch(error) {
-        res.status(400).json({error: error.message})
-    }    
+  try {
+    const flowers = await Flower.find();
+    res.status(200).json('Welcome to the Flower delivery website backend');
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 };
 
-
-// Get a single workout
+// Get a single flower
 const getFlower = async (req, res) => {
-    try {
-        const{id} = req.params
-        const flower = await Flower.findById(id)
-        if (!flower) {
-            return res.status(404).json({error: "Flower not found"})} 
-    }   catch(error) {
-            res.status(200).json(flower)
-        }
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: 'Invalid ID format' });
+  }
+
+  try {
+    const flower = await Flower.findById(id);
+    if (!flower) {
+      return res.status(404).json({ error: 'Flower not found' });
+    }
+    res.status(200).json(flower);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
+// Create a new flower
+const createFlower = async (req, res) => {
+  const { name, description, price, category } = req.body;
+  const image = req.file?.path;
 
-// Post Flower
-const createFlower = async (req,res) => {
-    const {name, description, price, category} = req.body
-    const image = req.file?.path;
-    try {
-        const flower = new Flower({name, description, price, category, image})
-        const savedFlower = await flower.save()
-        res.status(200).json(savedFlower)
-    }
-    catch(error) {
-        res.status(400).json({error: error.message})
-    }
-}
+  try {
+    const flower = new Flower({ name, description, price, category, image });
+    const savedFlower = await flower.save();
+    res.status(201).json(savedFlower);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
 
-// Update Flower
+// Update a flower
 const updateFlower = async (req, res) => {
-    const { name, description, price, category } = req.body;
-    const image = req.file?.path;
-  
-    try {
-      const updatedData = { name, description, price, category };
-      if (image) updatedData.image = image;
-  
-      const flower = await Flower.findByIdAndUpdate(
-        req.params.id,
-        updatedData,
-        { new: true }
-      );
-  
-      if (!flower) return res.status(404).json({ message: 'Flower not found' });
-  
-      res.json(flower);
-    } catch (err) {
-      res.status(400).json({ message: err.message });
+  const { id } = req.params;
+  const { name, description, price, category } = req.body;
+  const image = req.file?.path;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: 'Invalid ID format' });
+  }
+
+  const updatedData = { name, description, price, category };
+  if (image) updatedData.image = image;
+
+  try {
+    const flower = await Flower.findByIdAndUpdate(id, updatedData, { new: true });
+    if (!flower) {
+      return res.status(404).json({ error: 'Flower not found' });
     }
-  };
-  
-
-
-
-// Delete Flower
-
-const deleteFlower = async (req, res) => {
-    try {
-        const{id} = req.params
-        if (!mongoose.Types.ObjectId.isValid) {
-            return res.status(404).json({error: "No such Id"})
-        }
-        const flower = await Flower.findOneAndDelete({_id: id})
-        res.status(200).json('Flower deleted')
-        if (!flower) {
-            return res.status(400).json({error: "No such Flower"})
-        }
-        } catch(error) {
-            res.status(404).json({error: error.message})
-        }
-
+    res.status(200).json(flower);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 };
 
+// Delete a flower
+const deleteFlower = async (req, res) => {
+  const { id } = req.params;
 
-module.exports = {getFlowers, getFlower, createFlower, updateFlower, deleteFlower}
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: 'Invalid ID format' });
+  }
+
+  try {
+    const flower = await Flower.findByIdAndDelete(id);
+    if (!flower) {
+      return res.status(404).json({ error: 'Flower not found' });
+    }
+    res.status(200).json({ message: 'Flower deleted' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+module.exports = {
+  getFlowers,
+  getFlower,
+  createFlower,
+  updateFlower,
+  deleteFlower,
+};

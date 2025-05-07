@@ -53,7 +53,7 @@ Edit
 ---
 
 ## 🚀 Live Demo
-🔗 [View Live Demo](https://startup-website-8faj.onrender.com) 
+🔗 [View Live Demo](https://flower-delivery-website-q9xa.onrender.com) 
 
 ## 🚀 Presentation link
 🔗 [Watch Loom Video](https://www.loom.com/share/aa29da5b600a418fbc61cce9adf54fe7?sid=9c676487-271d-41e9-b620-af2d7abcdd95)

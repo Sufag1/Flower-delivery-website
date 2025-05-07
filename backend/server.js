@@ -19,7 +19,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Routes
 const flowerRoutes = require('./routes/flowerRoutes');
-app.get('/api/flowers/', (req, res) => {
+app.get('/', (req, res) => {
     res.send('Welcome to the Flower Delivery API');
   });
   

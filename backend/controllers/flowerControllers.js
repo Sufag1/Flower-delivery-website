@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 // Get all flowers
 const getFlowers = async (req, res) => {
   try {
-    const flowers = await Flower.find();
-    res.status(200).json('Welcome to the Flower delivery website backend');
+    const flowers = await Flower.find().sort({createdAt: -1});
+    res.status(200).json({"This is a get request to access all flowers": flowers});
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -24,7 +24,7 @@ const getFlower = async (req, res) => {
     if (!flower) {
       return res.status(404).json({ error: 'Flower not found' });
     }
-    res.status(200).json(flower);
+    res.status(200).json("This is a get request to access a single flower");
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -62,7 +62,7 @@ const updateFlower = async (req, res) => {
     if (!flower) {
       return res.status(404).json({ error: 'Flower not found' });
     }
-    res.status(200).json(flower);
+    res.status(200).json("This is a update request to patch a single flower");
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -81,7 +81,7 @@ const deleteFlower = async (req, res) => {
     if (!flower) {
       return res.status(404).json({ error: 'Flower not found' });
     }
-    res.status(200).json({ message: 'Flower deleted' });
+    res.status(200).json({message: "Flower deleted" });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

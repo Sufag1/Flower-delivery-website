@@ -4,6 +4,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
 
+
 dotenv.config();
 
 
@@ -18,12 +19,15 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
 // Routes
-const flowerRoutes = require('./routes/flowerRoutes');
 app.get('/', (req, res) => {
-    res.send('Welcome to the Flower Delivery API');
+    res.send('Welcome to the Flower Delivery Website Backend');
   });
   
+const flowerRoutes = require('./routes/flowerRoutes');
 app.use('/api/flowers', flowerRoutes);
+
+const userRouter = require('./routes/userRoutes');
+app.use('/api/users/', userRouter )
 
 
 // Connecting to Mongo DB and starting the server

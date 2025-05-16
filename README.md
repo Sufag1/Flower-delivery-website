@@ -31,13 +31,13 @@ This is the backend server for a Flower Delivery Website built with **Node.js**,
 backend/
 │
 ├── controllers/
-│ └── flowerControllers.js
+│ └── userControllers.js
 │
 ├── models/
-│ └── flowerModels.js
+│ └── userModels.js
 │
 ├── routes/
-│ └── flowerRoutes.js
+│ └── userRoutes.js
 │
 ├── uploads/
 │ └── [Uploaded images]
@@ -53,7 +53,7 @@ Edit
 ---
 
 ## 🚀 Live Demo
-🔗 [View Live Demo](https://flower-delivery-website-q9xa.onrender.com) 
+🔗 [View Live Demo](https://flower-delivery-website-q9xa.onrender.com/) 
 
 ## 🚀 Presentation link
 🔗 [Watch Loom Video](https://www.loom.com/share/aa29da5b600a418fbc61cce9adf54fe7?sid=9c676487-271d-41e9-b620-af2d7abcdd95)
@@ -81,14 +81,13 @@ nodemon server.js
 The server will run on: http://localhost:4000
 
 📡 API Endpoints
-All API endpoints are prefixed with /api/flowers
+All API endpoints are prefixed with /api/users
 
 Method	Endpoint	Description
-GET	/	Get all flowers
-GET	/:id	Get a single flower
-POST	/	Create a new flower
-PATCH	/:id	Update a flower
-DELETE	/:id	Delete a flower
+GET	/	Get all users
+POST	/	Sign up a new user
+POST	/	Login a user
+
 
 👨‍💻 Author
 Developed by Farouq Abubakar

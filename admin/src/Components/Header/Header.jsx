@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 const Header = () => {
     return ( 
         <>
@@ -11,7 +12,7 @@ const Header = () => {
         </div>
         <hr />
         </>
-     );
+    );
 }
  
 export default Header;

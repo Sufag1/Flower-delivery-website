@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 const Flowers = () => {
     const [ flowers, setFlowers ] = useState([]);
 
@@ -40,7 +39,7 @@ const Flowers = () => {
                 ))};
             </div>
         </div>
-     );
+    );
 };
- 
+
 export default Flowers;

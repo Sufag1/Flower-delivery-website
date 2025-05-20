@@ -1,8 +1,9 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Flowers from './Pages/Flower';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
+import Flowers from './Pages/Flower/Flower';
+import AddFlowers from './Pages/Addflower/AddFlower';
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
 
 
 function App() {
@@ -16,8 +17,7 @@ function App() {
       </Routes>
       <Footer />
     </Router>
-    
   );
-}
+};
 
 export default App;

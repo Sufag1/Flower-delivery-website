@@ -1,11 +1,13 @@
-const Flower = require('../models/flowerModels');
-const mongoose = require('mongoose');
+const Flower = require("../models/flowerModels");
+const mongoose = require("mongoose");
 
 // Get all flowers
 const getFlowers = async (req, res) => {
   try {
-    const flowers = await Flower.find().sort({createdAt: -1});
-    res.status(200).json({"This is a get request to access all flowers": flowers});
+    const flowers = await Flower.find().sort({ createdAt: -1 });
+    res
+      .status(200)
+      .json({ "This is a get request to access all flowers": flowers });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -16,13 +18,13 @@ const getFlower = async (req, res) => {
   const { id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({ error: 'Invalid ID format' });
+    return res.status(404).json({ error: "Invalid ID format" });
   }
 
   try {
     const flower = await Flower.findById(id);
     if (!flower) {
-      return res.status(404).json({ error: 'Flower not found' });
+      return res.status(404).json({ error: "Flower not found" });
     }
     res.status(200).json("This is a get request to access a single flower");
   } catch (error) {
@@ -51,16 +53,18 @@ const updateFlower = async (req, res) => {
   const image = req.file?.path;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({ error: 'Invalid ID format' });
+    return res.status(404).json({ error: "Invalid ID format" });
   }
 
   const updatedData = { name, description, price, category };
   if (image) updatedData.image = image;
 
   try {
-    const flower = await Flower.findByIdAndUpdate(id, updatedData, { new: true });
+    const flower = await Flower.findByIdAndUpdate(id, updatedData, {
+      new: true,
+    });
     if (!flower) {
-      return res.status(404).json({ error: 'Flower not found' });
+      return res.status(404).json({ error: "Flower not found" });
     }
     res.status(200).json("This is a update request to patch a single flower");
   } catch (error) {
@@ -73,15 +77,15 @@ const deleteFlower = async (req, res) => {
   const { id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({ error: 'Invalid ID format' });
+    return res.status(404).json({ error: "Invalid ID format" });
   }
 
   try {
     const flower = await Flower.findByIdAndDelete(id);
     if (!flower) {
-      return res.status(404).json({ error: 'Flower not found' });
+      return res.status(404).json({ error: "Flower not found" });
     }
-    res.status(200).json({message: "Flower deleted" });
+    res.status(200).json({ message: "Flower deleted" });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+}
+
+h1 {
+    color: rgb(223, 32, 32)		;
+    margin-left: 60px;
+    font-family: sans-serif;
+    font-weight: 900;
+}
+
+.header-buttons {
+    margin-right: -60px;
+}
+
+.header-buttons button {
+    margin-left: 20px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 2px solid #000;
+}
+
+
+.active {
+    background: black;
+    color: white;
+}
+
+hr {
+    width: 90vw;
+}
+
+

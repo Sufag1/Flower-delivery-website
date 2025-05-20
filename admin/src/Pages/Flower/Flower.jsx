@@ -1,3 +1,4 @@
+import '../Flower/Flower.css';
 import { useEffect, useState } from "react";
 const Flowers = () => {
     const [ flowers, setFlowers ] = useState([]);

@@ -6,7 +6,7 @@ A full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) web application t
 
 
 ## 🚀 Live Demo
-🔗 [View Live Demo]() 
+🔗 [View Live Demo](https://flower-delivery-website-admin.onrender.com) 
 
 ## 🚀 Presentation link
 🔗 [Watch Loom Video](https://www.loom.com/share/bf4ce82c2da54b34837a0726c4b89399?sid=c2aac0b4-5e0c-4024-bdbc-d488acc544b0)
@@ -36,3 +36,11 @@ A full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) web application t
 - MongoDB Atlas account
 - npm or yarn
 
+📜 License
+This project is open-source under the MIT License.
+
+👨‍💻 Author
+Developed by Farouq Abubakar
+💌 Contact me at farouqabubakar99@gmail.com
+- **GitHub Repo Link** (https://github.com/Sufag1/Recipe-website.git)   
+- **Author Info** → Farouq Abubakar, Sufag1, and farouqabubakar99a@gmail.com.  

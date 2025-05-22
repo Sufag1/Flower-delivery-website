@@ -6,3 +6,15 @@ footer {
   display: block;
   align-items: end;
 }
+
+@media (min-width: 768px) {
+    footer {
+      font-size: 1.1rem;
+    }
+}
+
+@media (min-width:1024px) {
+    footer {
+      font-size: 1.3rem;
+    }
+}

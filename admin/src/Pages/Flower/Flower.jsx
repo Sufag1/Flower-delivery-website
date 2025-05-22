@@ -4,28 +4,30 @@ const Flowers = () => {
   const [flowers, setFlowers] = useState([]);
 
   const fetchFlowers = async () => {
-  try {
-    const res = await fetch("http://localhost:4000/api/flowers");
-    const data = await res.json();
-    console.log("Fetched data from backend:", data);
+    try {
+      const res = await fetch("http://localhost:4000/api/flowers");
+      const data = await res.json();
+      console.log("Fetched data from backend:", data);
 
-    if (data.flowers && Array.isArray(data.flowers)) {
-      setFlowers(data.flowers);
-    } else {
-      setFlowers([]); 
+      if (data.flowers && Array.isArray(data.flowers)) {
+        setFlowers(data.flowers);
+      } else {
+        setFlowers([]);
+      }
+    } catch (error) {
+      console.error("Failed to fetch flowers:", error);
+      setFlowers([]);
     }
-  } catch (error) {
-    console.error("Failed to fetch flowers:", error);
-    setFlowers([]); 
-  } 
-};
+  };
 
   useEffect(() => {
     fetchFlowers();
   }, []);
 
   const deleteFlower = async (id) => {
-    await fetch(`http://localhost:4000/api/flowers/${id}`, { method: "DELETE" });
+    await fetch(`http://localhost:4000/api/flowers/${id}`, {
+      method: "DELETE",
+    });
     fetchFlowers();
   };
 
@@ -35,7 +37,10 @@ const Flowers = () => {
         {flowers.map((flower) => (
           <div className="flower-card" key={flower._id}>
             <div className="flower-img">
-                <img src={`http://localhost:4000/${flower.image}`} alt={flower.name} />              
+              <img
+                src={`http://localhost:4000/${flower.image}`}
+                alt={flower.name}
+              />
               <span
                 className="delete-icon material-symbols-outlined"
                 onClick={() => deleteFlower(flower._id)}

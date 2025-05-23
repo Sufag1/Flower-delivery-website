@@ -7,7 +7,7 @@ const getFlowers = async (req, res) => {
     const flowers = await Flower.find().sort({ createdAt: -1 });
     res
       .status(200)
-      .json({ "This is a get request to access all flowers": flowers });
+      .json({ flowers });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

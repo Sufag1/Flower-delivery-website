@@ -1,99 +1,46 @@
-# 🌸 Flower Delivery Website - Backend
 
-This is the backend server for a Flower Delivery Website built with **Node.js**, **Express**, and **MongoDB (Mongoose)**. It provides a RESTful API for managing flower data including creation, retrieval, update, and deletion of flower entries, along with image uploads.
+# 🌸 Flower Delivery Web App
 
----
+A full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) web application that allows admins to manage a catalog of flowers — including uploading images, entering details like name, category, price, and description.
 
-## 🚀 Features
 
-- CRUD operations for flower products
-- Image upload support with **Multer**
-- MongoDB Atlas integration with **Mongoose**
-- Environment-based configuration with **dotenv**
-- CORS support for frontend communication
-
----
-
-## 🧾 Technologies Used
-
-- Node.js
-- Express.js
-- MongoDB Atlas
-- Mongoose
-- Multer (file uploads)
-- Dotenv
-- CORS
-
----
-
-## 📁 Project Structure
-
-backend/
-│
-├── controllers/
-│ └── userControllers.js
-│
-├── models/
-│ └── userModels.js
-│
-├── routes/
-│ └── userRoutes.js
-│
-├── uploads/
-│ └── [Uploaded images]
-│
-├── .env
-├── server.js
-└── package.json
-
-yaml
-Copy
-Edit
-
----
 
 ## 🚀 Live Demo
-🔗 [View Live Demo](https://flower-delivery-website-q9xa.onrender.com/) 
+🔗 [Live Demo](https://flower-delivery-website-admin.onrender.com) 
 
 ## 🚀 Presentation link
-🔗 [Watch Loom Video](https://www.loom.com/share/aa29da5b600a418fbc61cce9adf54fe7?sid=9c676487-271d-41e9-b620-af2d7abcdd95)
+🔗 [Watch Loom Video](https://www.loom.com/share/bf4ce82c2da54b34837a0726c4b89399?sid=c2aac0b4-5e0c-4024-bdbc-d488acc544b0)
+
+## ✨ Features
+
+- Upload flower images with preview before submission
+- Create, view, and delete flower entries
+- RESTful API built with Express and MongoDB
+- Clean and responsive React UI
+- Form validation and alert messages
+- Modular file structure with MVC pattern
+
+## 🧑‍💻 Tech Stack
+
+| Frontend       | Backend           | Database         |
+|----------------|-------------------|------------------|
+| React.js       | Express.js        | MongoDB Atlas    |
+| CSS Modules    | Node.js           | Mongoose ODM     |
+
+---
 
 
-## 🛠️ Setup Instructions
+### Prerequisites
 
-### 1. Clone the Repository
+- Node.js (v16+)
+- MongoDB Atlas account
+- npm or yarn
 
-```bash
-git clone https://github.com/sufag1/flower-delivery-website.git
-cd flower-delivery-website/backend
-
-2. Install Dependencies
-bash
-Copy
-Edit
-npm install
-
-3. Start the Server
-bash
-Copy
-Edit
-nodemon server.js
-The server will run on: http://localhost:4000
-
-📡 API Endpoints
-All API endpoints are prefixed with /api/users
-
-Method	Endpoint	Description
-GET	/	Get all users
-POST	/	Sign up a new user
-POST	/	Login a user
-
+📜 License
+This project is open-source under the MIT License.
 
 👨‍💻 Author
 Developed by Farouq Abubakar
 💌 Contact me at farouqabubakar99@gmail.com
 - **GitHub Repo Link** (https://github.com/Sufag1/Recipe-website.git)   
 - **Author Info** → Farouq Abubakar, Sufag1, and farouqabubakar99a@gmail.com.  
-
-📃 License
-This project is open source and available under the MIT License.

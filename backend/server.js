@@ -30,6 +30,8 @@ const userRouter = require('./routes/userRoutes');
 app.use('/api/users/', userRouter )
 
 
+
+
 // Connecting to Mongo DB and starting the server
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {

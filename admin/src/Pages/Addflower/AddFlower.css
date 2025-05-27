@@ -12,6 +12,11 @@ body {
   font-family: sans-serif;
 }
 
+.select {
+  width: 100%;
+  height: 45%;
+}
+
 form label {
   display: block;
   margin: 15px 0 5px;

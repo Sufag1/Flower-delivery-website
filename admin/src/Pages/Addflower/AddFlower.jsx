@@ -112,13 +112,20 @@ const AddFlowers = () => {
         <div className="row">
           <div className="category">
             <label>Category</label>
-            <input
-              type="text"
+            <select type="text"
               name="category"
               value={form.category}
               onChange={handleChange}
               required
-            />
+              className="select">
+                <option value="Fresh Flowers">Fresh Flowers</option>
+                <option value="Dried Flowers">Dried Flowers</option>
+                <option value="Live Plants">Live Plants</option>
+                <option value="Aroma Candels">Aroma Candels</option>
+                <option value="Fresheners">Fresheners</option>
+            </select>
+              
+    
           </div>
           <div className="price">
             <label>Price</label>

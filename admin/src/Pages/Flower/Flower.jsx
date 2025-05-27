@@ -1,5 +1,6 @@
 import "../Flower/Flower.css";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 const Flowers = () => {
   const [flowers, setFlowers] = useState([]);
 
@@ -24,11 +25,30 @@ const Flowers = () => {
     fetchFlowers();
   }, []);
 
-  const deleteFlower = async (id) => {
-    await fetch(`http://localhost:4000/api/flowers/${id}`, {
-      method: "DELETE",
+  
+  const handleDelete = async (id) => {
+    const result = await Swal.fire ({
+      title: "Are you sure?",
+      text: "Do you really want to delete this flower?",
+      icon: "warning",
+      showCancelButton: true,
+      cancelButtonText: "No",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, delete it!",
+      confirmButtonColor: "#d33",
     });
-    fetchFlowers();
+
+    if( result.isConfirmed) {
+      try {
+          await fetch(`http://localhost:4000/api/flowers/${id}`, {
+        method: "DELETE",
+      });
+      await fetchFlowers();
+      Swal.fire("Deleted!", "The Flower has been deleted.", "success");
+      } catch (error) {
+        Swal.fire("Delete Failed:", error);
+      }
+    }
   };
 
   return (
@@ -43,7 +63,7 @@ const Flowers = () => {
               />
               <span
                 className="delete-icon material-symbols-outlined"
-                onClick={() => deleteFlower(flower._id)}
+                onClick={() => handleDelete(flower._id)}
               >
                 delete
               </span>
@@ -56,7 +76,7 @@ const Flowers = () => {
                 <strong>Category:</strong> {flower.category}
               </p>
               <p>
-                <strong>Price:</strong> {flower.price}
+                <strong>Price:</strong> {`$${flower.price}`}
               </p>
               <p>
                 <strong>Description:</strong> {flower.description}

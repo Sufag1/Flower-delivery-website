@@ -34,11 +34,11 @@ const getFlower = async (req, res) => {
 
 // Create a new flower
 const createFlower = async (req, res) => {
-  const { name, description, price, category } = req.body;
+  const { name, description, price, category, createdAt } = req.body;
   const image = req.file?.path;
 
   try {
-    const flower = new Flower({ name, description, price, category, image });
+    const flower = new Flower({ name, description, price, category, image, createdAt  });
     const savedFlower = await flower.save();
     res.status(201).json(savedFlower);
   } catch (error) {
@@ -49,14 +49,14 @@ const createFlower = async (req, res) => {
 // Update a flower
 const updateFlower = async (req, res) => {
   const { id } = req.params;
-  const { name, description, price, category } = req.body;
+  const { name, description, price, category, createdAt } = req.body;
   const image = req.file?.path;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(404).json({ error: "Invalid ID format" });
   }
 
-  const updatedData = { name, description, price, category };
+  const updatedData = { name, description, price, category, createdAt };
   if (image) updatedData.image = image;
 
   try {

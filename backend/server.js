@@ -8,7 +8,7 @@ const path = require('path');
 dotenv.config();
 
 
-// starting express app
+// Starting express app
 const app = express();
 
 

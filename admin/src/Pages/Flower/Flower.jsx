@@ -6,7 +6,7 @@ const Flowers = () => {
 
   const fetchFlowers = async () => {
     try {
-      const res = await fetch("https://flower-delivery-website-q9xa.onrender.com");
+      const res = await fetch("http://localhost:4000/api/flowers");
       const data = await res.json();
       console.log("Fetched data from backend:", data);
 
@@ -40,7 +40,7 @@ const Flowers = () => {
 
     if( result.isConfirmed) {
       try {
-          await fetch(`https://flower-delivery-website-q9xa.onrender.com/${id}`, {
+          await fetch(`http://localhost:4000/api/flowers/${id}`, {
         method: "DELETE",
       });
       await fetchFlowers();
@@ -58,7 +58,7 @@ const Flowers = () => {
           <div className="flower-card" key={flower._id}>
             <div className="flower-img">
               <img
-                src={`https://flower-delivery-website-q9xa.onrender.com/${flower.image}`}
+                src={`http://localhost:4000/${flower.image}`}
                 alt={flower.name}
               />
               <span

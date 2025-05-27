@@ -26,7 +26,7 @@ const getFlower = async (req, res) => {
     if (!flower) {
       return res.status(404).json({ error: "Flower not found" });
     }
-    res.status(200).json("This is a get request to access a single flower");
+    res.status(200).json(flower);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -34,11 +34,11 @@ const getFlower = async (req, res) => {
 
 // Create a new flower
 const createFlower = async (req, res) => {
-  const { name, description, price, category, createdAt } = req.body;
+  const { name, description, price, category } = req.body;
   const image = req.file?.path;
 
   try {
-    const flower = new Flower({ name, description, price, category, image, createdAt  });
+    const flower = new Flower({ name, description, price, category, image  });
     const savedFlower = await flower.save();
     res.status(201).json(savedFlower);
   } catch (error) {
@@ -49,14 +49,14 @@ const createFlower = async (req, res) => {
 // Update a flower
 const updateFlower = async (req, res) => {
   const { id } = req.params;
-  const { name, description, price, category, createdAt } = req.body;
+  const { name, description, price, category } = req.body;
   const image = req.file?.path;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(404).json({ error: "Invalid ID format" });
   }
 
-  const updatedData = { name, description, price, category, createdAt };
+  const updatedData = { name, description, price, category };
   if (image) updatedData.image = image;
 
   try {
@@ -66,7 +66,7 @@ const updateFlower = async (req, res) => {
     if (!flower) {
       return res.status(404).json({ error: "Flower not found" });
     }
-    res.status(200).json("This is a update request to patch a single flower");
+    res.status(200).json(flower);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

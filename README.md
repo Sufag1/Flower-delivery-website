@@ -9,7 +9,7 @@ A full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) web application t
 🔗 [Live Demo](https://flower-delivery-website-admin.onrender.com) 
 
 ## 🚀 Presentation link
-🔗 [Watch Loom Video](https://www.loom.com/share/bf4ce82c2da54b34837a0726c4b89399?sid=c2aac0b4-5e0c-4024-bdbc-d488acc544b0)
+🔗 [Watch Loom Video](https://www.loom.com/share/cc384bd4725547f4b396862316c74844?sid=6b9ba347-a936-4c82-8e29-9ba2494da0d6)
 
 ## ✨ Features
 
@@ -34,7 +34,7 @@ A full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) web application t
 
 - Node.js (v16+)
 - MongoDB Atlas account
-- npm or yarn
+
 
 📜 License
 This project is open-source under the MIT License.

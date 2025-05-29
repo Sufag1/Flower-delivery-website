@@ -57,44 +57,6 @@ const Flowers = () => {
     }
   };
   return (
-    // <div className="container">
-    //   <h1>Flower Page</h1>
-    //   <p>Total flowers: {flowers.length}</p>
-
-    //   <div className="flower-list">
-    //     {flowers.length === 0 ? (
-    //       <p>No flowers found.</p>
-    //     ) : (
-    //       flowers.map((flower, index) => {
-    //         console.log("Rendering flower:", flower);
-    //         return (
-    //           <div className="flower-card" key={flower._id || index}>
-    //             <div className="flower-img">
-    //               <img
-    //                 src={`https://flower-delivery-website-q9xa.onrender.com/uploads/${flower.image}`}
-    //                 alt={flower.name}
-    //               />
-    //               <span
-    //                 className="delete-icon material-symbols-outlined"
-    //                 onClick={() => handleDelete(flower._id)}
-    //               >
-    //                 delete
-    //               </span>
-    //             </div>
-    //             <div className="flower-details">
-    //               <p><strong>Name:</strong> {flower.name}</p>
-    //               <p><strong>Category:</strong> {flower.category}</p>
-    //               <p><strong>Price:</strong> {`$${flower.price}`}</p>
-    //               <p><strong>Description:</strong> {flower.description}</p>
-    //             </div>
-    //           </div>
-    //         );
-    //       })
-    //     )}
-    //   </div>
-    // </div>
-    // );
-
     <div className="container">
       <div className="flower-list">
         {flowers.map((flower) => (

@@ -44,10 +44,13 @@ const AddFlowers = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:4000/api/flowers", {
+      const res = await fetch("https://flower-delivery-website-q9xa.onrender.com/api/flowers", {
         method: "POST",
         body: formData,
       });
+
+      const result = await res.json();
+
 
       if (res.ok) {
         setMessage("🌸 Flower Submitted Successfully!");
@@ -58,12 +61,14 @@ const AddFlowers = () => {
           category: "",
           price: "",
           description: "",
+
         });
 
         setImage(null);
         setPreview(null);
         document.getElementById("imageInput").value = null;
       } else {
+        console.error("Upload failed", result);
         setMessage("❌ Failed to submit flower.");
         setMessageType("error");
       }
@@ -118,6 +123,7 @@ const AddFlowers = () => {
               onChange={handleChange}
               required
               className="select">
+                <option value="">-- Select Category --</option>
                 <option value="Fresh Flowers">Fresh Flowers</option>
                 <option value="Dried Flowers">Dried Flowers</option>
                 <option value="Live Plants">Live Plants</option>
@@ -145,7 +151,7 @@ const AddFlowers = () => {
           onChange={handleChange}
           required
         ></textarea>
-        <button className="submit-btn" onSubmit={handleSubmit}>
+        <button className="submit-btn" type="submit">
           SUBMIT
         </button>
       </form>

@@ -6,9 +6,11 @@ const Flowers = () => {
 
   const fetchFlowers = async () => {
     try {
-      const res = await fetch("http://localhost:4000/api/flowers");
+      const res = await fetch("https://flower-delivery-website-q9xa.onrender.com/api/flowers");
       const data = await res.json();
       console.log("Fetched data from backend:", data);
+      console.log("Is data.flowers an array?", Array.isArray(data.flowers));
+      console.log("data.flowers:", data.flowers);
 
       if (data.flowers && Array.isArray(data.flowers)) {
         setFlowers(data.flowers);
@@ -40,7 +42,7 @@ const Flowers = () => {
 
     if( result.isConfirmed) {
       try {
-          await fetch(`http://localhost:4000/api/flowers/${id}`, {
+          await fetch(`https://flower-delivery-website-q9xa.onrender.com/api/flowers/${id}`, {
         method: "DELETE",
       });
       await fetchFlowers();
@@ -50,43 +52,81 @@ const Flowers = () => {
       }
     }
   };
+      return (
+  // <div className="container">
+  //   <h1>Flower Page</h1>
+  //   <p>Total flowers: {flowers.length}</p>
 
-  return (
-    <div className="container">
-      <div className="flower-list">
-        {flowers.map((flower) => (
-          <div className="flower-card" key={flower._id}>
-            <div className="flower-img">
-              <img
-                src={`http://localhost:4000/${flower.image}`}
-                alt={flower.name}
-              />
-              <span
-                className="delete-icon material-symbols-outlined"
-                onClick={() => handleDelete(flower._id)}
-              >
-                delete
-              </span>
-            </div>
-            <div className="flower-details">
-              <p>
-                <strong>Name:</strong> {flower.name}
-              </p>
-              <p>
-                <strong>Category:</strong> {flower.category}
-              </p>
-              <p>
-                <strong>Price:</strong> {`$${flower.price}`}
-              </p>
-              <p>
-                <strong>Description:</strong> {flower.description}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  //   <div className="flower-list">
+  //     {flowers.length === 0 ? (
+  //       <p>No flowers found.</p>
+  //     ) : (
+  //       flowers.map((flower, index) => {
+  //         console.log("Rendering flower:", flower);
+  //         return (
+  //           <div className="flower-card" key={flower._id || index}>
+  //             <div className="flower-img">
+  //               <img
+  //                 src={`https://flower-delivery-website-q9xa.onrender.com/uploads/${flower.image}`}
+  //                 alt={flower.name}
+  //               />
+  //               <span
+  //                 className="delete-icon material-symbols-outlined"
+  //                 onClick={() => handleDelete(flower._id)}
+  //               >
+  //                 delete
+  //               </span>
+  //             </div>
+  //             <div className="flower-details">
+  //               <p><strong>Name:</strong> {flower.name}</p>
+  //               <p><strong>Category:</strong> {flower.category}</p>
+  //               <p><strong>Price:</strong> {`$${flower.price}`}</p>
+  //               <p><strong>Description:</strong> {flower.description}</p>
+  //             </div>
+  //           </div>
+  //         );
+  //       })
+  //     )}
+  //   </div>
+  // </div>
+// );
+
+     <div className="container">
+       <div className="flower-list">
+         {flowers.map((flower) => (
+           <div className="flower-card" key={flower._id}>
+             <div className="flower-img">
+               <img
+                 src={`https://flower-delivery-website-q9xa.onrender.com/uploads/${flower.image}`}
+                 alt={flower.name}
+               />
+               <span
+                 className="delete-icon material-symbols-outlined"
+                 onClick={() => handleDelete(flower._id)}
+               >
+                 delete
+               </span>
+             </div>
+             <div className="flower-details">
+               <p>
+                 <strong>Name:</strong> {flower.name}
+               </p>
+               <p>
+                 <strong>Category:</strong> {flower.category}
+               </p>
+               <p>
+                 <strong>Price:</strong> {`$${flower.price}`}
+               </p>
+               <p>
+                 <strong>Description:</strong> {flower.description}
+               </p>
+             </div>
+           </div>
+         ))}
+       </div>
+      
+     </div>
+   );
 };
 
 export default Flowers;

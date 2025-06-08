@@ -25,7 +25,18 @@ app.use("/api/flowers", flowerRoutes);
 const userRouter = require("./routes/userRoutes");
 app.use("/api/users/", userRouter);
 
+
+
 // Connecting to Mongo DB and starting the server
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => {
+        app.listen(process.env.PORT, () => {
+            console.log(`connected to DB and server is on port ${process.env.PORT}`);
+        });
+    })
+    .catch((error) => {
+        console.error('DB connection error:', error);
+    })
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {

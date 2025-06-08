@@ -44,13 +44,15 @@ const AddFlowers = () => {
     }
 
     try {
-      const res = await fetch("https://flower-delivery-website-m3-api.onrender.com/api/flowers", {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(
+        "https://flower-delivery-website-m3-api.onrender.com/api/flowers",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       const result = await res.json();
-
 
       if (res.ok) {
         setMessage("🌸 Flower Submitted Successfully!");
@@ -61,7 +63,6 @@ const AddFlowers = () => {
           category: "",
           price: "",
           description: "",
-
         });
 
         setImage(null);
@@ -117,21 +118,21 @@ const AddFlowers = () => {
         <div className="row">
           <div className="category">
             <label>Category</label>
-            <select type="text"
+            <select
+              type="text"
               name="category"
               value={form.category}
               onChange={handleChange}
               required
-              className="select">
-                <option value="">-- Select Category --</option>
-                <option value="Fresh Flowers">Fresh Flowers</option>
-                <option value="Dried Flowers">Dried Flowers</option>
-                <option value="Live Plants">Live Plants</option>
-                <option value="Aroma Candels">Aroma Candels</option>
-                <option value="Fresheners">Fresheners</option>
+              className="select"
+            >
+              <option value="">-- Select Category --</option>
+              <option value="Fresh Flowers">Fresh Flowers</option>
+              <option value="Dried Flowers">Dried Flowers</option>
+              <option value="Live Plants">Live Plants</option>
+              <option value="Aroma Candels">Aroma Candels</option>
+              <option value="Fresheners">Fresheners</option>
             </select>
-              
-    
           </div>
           <div className="price">
             <label>Price</label>
@@ -158,5 +159,4 @@ const AddFlowers = () => {
     </div>
   );
 };
-
 export default AddFlowers;

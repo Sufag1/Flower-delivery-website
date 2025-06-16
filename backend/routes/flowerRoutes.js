@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
-const cloudinary = require("../cloudinary.js");
+const cloudinary = require("../utils/cloudinary.js");
 const {
   getFlowers,
   getFlower,
@@ -12,7 +12,7 @@ const {
 
 
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
-const cloudinary = require("../utils/cloudinary");
+const cloudinary = require("../utils/cloudinary.js");
 
 
 // Multer and cloudinary setup

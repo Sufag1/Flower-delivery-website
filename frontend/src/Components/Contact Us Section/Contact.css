@@ -1,0 +1,64 @@
+.top-block h2 {
+    font-family: Gilroy;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    margin: 40px 139px 24px 16px;
+}
+
+.contact .left-column {
+    margin-top: -8px;
+}
+
+.top-block {
+    border: 1px solid #121212;
+}
+
+.form-block {
+    margin-bottom: -20px;
+}
+
+.right-column img {
+    width: 100%;
+}
+
+.column1 h3 {
+    margin: 16px 283px 16px 16px;
+    padding: 30px 0px;
+}
+
+.phone {
+    display: flex;
+    gap: 10px;
+}
+
+.phone-no {
+    border: 1px solid #121212;
+    padding: 40px 0px;
+}
+
+.column2 h3 {
+    margin: 40px 264px 40px 16px;
+}
+
+.column2 p {
+    margin: 40px 16px 0px 16px;
+}
+
+.loc {
+    display: flex;
+    margin: 0px 16px;
+    gap: 10px;
+}
+
+.loc p {
+    margin: 20px 0px;
+}
+.loc img {
+    margin: 20px 0px;
+}
+.add {
+    border: 1px solid #121212;
+}

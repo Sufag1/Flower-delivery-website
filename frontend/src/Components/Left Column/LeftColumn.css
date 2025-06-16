@@ -1,0 +1,63 @@
+.kyiv-text p {
+    font-family: Gilroy;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    vertical-align: middle;
+    margin: 16px 16px 24px 16px;
+
+
+}
+
+.kyiv-text h1 {
+    vertical-align: middle;
+    font-family: Gilroy;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 120%;
+    margin: 40px 16px;
+
+}
+
+.vl {
+    border: 1px solid #121212;
+    height: 140px;
+    padding-top: 40px;
+    margin-top: 15px;
+    
+}
+
+.hl {
+    border: 1px solid #121212;
+    width: 343px;
+    margin: 0 auto;
+}
+
+
+.kyiv-contents {
+    display: flex;
+}
+
+.rect {
+    padding: 16px 16px 40px 16px;
+}
+
+.kyiv-p {
+     display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+}
+
+.kyiv-p p{
+    font-family: Gilroy;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 120%;
+    vertical-align: middle;
+    margin: 16px 16px 40px 16px;
+}
+
+.left-column {
+    border: 1px solid #121212;
+}

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 const Flowers = () => {
   const [flowers, setFlowers] = useState([]);
+  const [loading, setLoading] = useSrtate(true)
 
   const fetchFlowers = async () => {
     try {
@@ -16,6 +17,7 @@ const Flowers = () => {
 
       if (data.flowers && Array.isArray(data.flowers)) {
         setFlowers(data.flowers);
+        setLoading(false)
       } else {
         setFlowers([]);
       }
@@ -56,6 +58,8 @@ const Flowers = () => {
       }
     }
   };
+
+  if(loading) return <p>Loading...</p>
   return (
     <div className="container">
       <div className="flower-list">

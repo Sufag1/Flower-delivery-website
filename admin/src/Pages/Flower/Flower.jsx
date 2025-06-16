@@ -67,7 +67,7 @@ const Flowers = () => {
           <div className="flower-card" key={flower._id}>
             <div className="flower-img">
               <img
-                src={`https://flower-delivery-website-m3-api.onrender.com/${flower.image}`}
+                src={flower.image}
                 alt={flower.name}
               />
               <span

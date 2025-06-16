@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
-const path = require("path");
+const cloudinary = require("../cloudinary.js");
 const {
   getFlowers,
   getFlower,
@@ -10,22 +10,24 @@ const {
   deleteFlower,
 } = require("../controllers/flowerControllers");
 
-// Multer setup
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, "uploads/"),
-  filename: (req, file, cb) => cb(null, `${Date.now()}-${file.originalname}`),
-});
-const fileFilter = (req, file, cb) => {
-  const allowedTypes = /jpeg|jpg|png|gif/;
-  const isValid = allowedTypes.test(file.mimetype.toLowerCase());
-  cb(null, isValid);
-};
 
-const upload = multer({
-  storage,
-  fileFilter,
-  limits: { fileSize: 5 * 1024 * 1024 },
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
+const cloudinary = require("../utils/cloudinary");
+
+
+// Multer and cloudinary setup
+
+const storage = new CloudinaryStorage({
+  cloudinary,
+  params: {
+    folder: "flowers", 
+    allowed_formats: ["jpg", "jpeg", "png", "gif"],
+    public_id: (req, file) => `${Date.now()}-${file.originalname}`,
+  },
 });
+
+const upload = multer({ storage });
+
 
 // Routes
 router.get("/", getFlowers);

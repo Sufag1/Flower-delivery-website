@@ -18,6 +18,15 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.get("/", (req, res) => {
   res.send("Welcome to the Flower Delivery Website Backend");
 });
+<<<<<<< HEAD
+=======
+
+const flowerRoutes = require("./routes/flowerRoutes");
+app.use("/api/flowers", flowerRoutes);
+
+const userRouter = require("./routes/userRoutes");
+app.use("/api/users/", userRouter);
+>>>>>>> 648a4604044190537c060f6ec7df570d061164d5
 
 const flowerRoutes = require("./routes/flowerRoutes");
 app.use("/api/flowers", flowerRoutes);
@@ -26,6 +35,18 @@ const userRouter = require("./routes/userRoutes");
 app.use("/api/users/", userRouter);
 
 // Connecting to Mongo DB and starting the server
+<<<<<<< HEAD
+=======
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => {
+        app.listen(process.env.PORT, () => {
+            console.log(`connected to DB and server is on port ${process.env.PORT}`);
+        });
+    })
+    .catch((error) => {
+        console.error('DB connection error:', error);
+    })
+>>>>>>> 648a4604044190537c060f6ec7df570d061164d5
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 const Flowers = () => {
   const [flowers, setFlowers] = useState([]);
-  const [loading, setLoading] = useSrtate(true)
+  const [loading, setLoading] = useState(true)
 
   const fetchFlowers = async () => {
     try {

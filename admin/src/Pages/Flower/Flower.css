@@ -59,6 +59,13 @@
   margin-top: 33px;
 }
 
+.loading {
+  text-align: center;
+  color: black;
+  font-size: large;
+  font-weight: 900;
+}
+
 @media (min-width: 768px) {
   .flower-details p {
     font-size: 1.3em;

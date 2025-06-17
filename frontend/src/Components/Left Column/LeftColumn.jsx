@@ -11,14 +11,12 @@ const LeftColumn = () => {
             Discover Uniquely Crafted Bouquets and Gifts for Any Occasion:
             Spread Joy with Our Online Flower Delivery Service
           </p>
-          <div className="hl"></div>
         </div>
-
+        
         <div className="kyiv-contents">
           <div className="kyiv-img">
             <img className="rect" src={Rectangle} alt="rect" />
           </div>
-          <div className="vl"></div>
           <div className="kyiv-p">
             <p>
               Experience the joy of giving with our modern floral studio. Order

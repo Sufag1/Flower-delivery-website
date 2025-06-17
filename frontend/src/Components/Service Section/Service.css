@@ -50,6 +50,10 @@
     color: #121212;
 }
 
+.service h1 {
+    margin: 40px 16px;
+}
+
 .service-content {
     position: relative;
 }

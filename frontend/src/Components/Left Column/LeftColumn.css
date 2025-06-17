@@ -39,14 +39,17 @@
 }
 
 .rect {
-    padding: 16px 16px 40px 16px;
+    margin: 16px 16px 20px 0px;
+    width: 100%;
 }
 
 .kyiv-p {
-     display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    margin-right: 16px;    
 }
 
 .kyiv-p p{
@@ -55,9 +58,34 @@
     font-size: 11px;
     line-height: 120%;
     vertical-align: middle;
-    margin: 16px 16px 40px 16px;
 }
 
 .left-column {
     border: 1px solid #121212;
+}
+
+.kyiv-img {
+    border-top: 1px solid black;
+    margin-left: 16px;
+    width: 100%;
+    
+}
+
+@media (min-width: 768px) {
+    .left-column{
+        padding: 2.5rem;
+    }
+
+    .left-column h1, p {
+        font-size: 3rem;
+    }
+
+    .kyiv-p p {
+        font-size: 1.1rem;
+    }
+
+    .rect {
+    }
+
+
 }

@@ -6,16 +6,10 @@
 .all {
     border: 1px solid #121212;
 }
-.shop-arrow {
-    display: flex;
-    align-items: center;
+.shop-arrow span {
+    font-size: 25px;
+    font-weight: bolder;
 }
-
-.shop-arrow img {
-    margin-bottom: -10px;
-    width: 20%;
-}
-
 
 .all-flowers {
     border: 1px solid #121212;
@@ -70,19 +64,37 @@
     letter-spacing: 0%;
     text-align: center;
     vertical-align: middle;
-    margin: 84px 12px 50px 12px;
+    margin: 84px 12px 30px 12px;
 
 }
 
 .shop-arrow {
-    margin: 0px 46px 12px 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
 }
 .shop-arrow p {
     font-family: Gilroy;
-    font-weight: 600;
-    font-size:10px;
-    line-height: 120%;
-    letter-spacing: 2.5%;
+    font-weight: 800;
+    font-size: 15px;
     vertical-align: middle;
-    margin-bottom: -10px;
+
+}
+
+
+@media (min-width: 768px) {
+    .shop-arrow p{
+        margin-top: 100px;
+        font-size: 1.5rem;
+    }
+   
+}
+
+@media (min-width: 1024px) {
+    .shop-arrow p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

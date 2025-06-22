@@ -1,11 +1,9 @@
 import './Category.css';
-import RightArrow from '../../assets/aright.svg';
-import LeftArrow from '../../assets/arrow-left.svg';
-import Fresh from '../../assets/fresh.png';
-import Dried from '../../assets/dried.png';
-import Live from '../../assets/live plants.png';
-import Aroma from '../../assets/aroma.png';
-import Fresheners from '../../assets/fresheners.png'
+import Fresh from '../assets/fresh.png';
+import Dried from '../assets/dried.png';
+import Live from '../assets/live plants.png';
+import Aroma from '../assets/aroma.png';
+import Fresheners from '../assets/fresheners.png'
 
 
 const Category = () => {
@@ -16,7 +14,7 @@ const Category = () => {
             <div className="fresh all">
                 <div className="fresh-text">
                     <h3>Fresh Flowers</h3>
-                    <div className="shop-arrow"> <p>Shop now</p> <img src={RightArrow} alt="right arrow" /></div>
+                    <div className="shop-arrow"> <p>Shop now   <span>&#8594;</span></p></div>
                 </div>
                 <div className="fresh-img">
                     <img src={Fresh} alt="fresh flowers link" />
@@ -29,14 +27,14 @@ const Category = () => {
                 </div>
                 <div className="dried-text">
                     <h3>Dried Flowers</h3>
-                    <div className="shop-arrow"><img src={LeftArrow} alt="left arrow" /><p>Shop now</p></div>
+                    <div className="shop-arrow"><p><span>&#8592;</span>    Shop now</p></div>
                 </div>
             </div>
             
             <div className="live all">
                  <div className="live-text">
                     <h3>Live Plants </h3>
-                    <div className="shop-arrow"><p>Shop now</p> <img src={RightArrow} alt="right arrow" /></div>
+                    <div className="shop-arrow"><p>Shop now   <span>&#8594;</span></p></div>
                 </div>
                 <div className="live-img">
                     <img src={Live} alt="live plants flowers link" />
@@ -49,7 +47,7 @@ const Category = () => {
                 </div>
                 <div className="aroma-text">
                     <h3>Aroma Candels</h3>
-                    <div className="shop-arrow "><img src={LeftArrow} alt="left arrow" /><p>Shop now</p></div>
+                    <div className="shop-arrow "><p><span>&#8592;</span>   Shop now</p></div>
                 </div>
            </div>
             
@@ -57,7 +55,7 @@ const Category = () => {
             <div className="fresheners all">
                  <div className="fresheners-text">
                     <h3>Fresheners</h3>
-                    <div className="shop-arrow"><p>Shop now</p> <img src={RightArrow} alt="right arrow" /></div>
+                    <div className="shop-arrow"><p>Shop now   <span>&#8594;</span></p></div>
                     
                 </div>
                 <div className="fresheners-img">

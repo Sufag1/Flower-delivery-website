@@ -5,10 +5,12 @@
     line-height: 140%;
     vertical-align: middle;
     margin: 16px 16px 24px 16px;
-
-
 }
 
+.kyiv-wrapper {
+    border-top: 1px solid black;
+
+}
 .kyiv-text h1 {
     vertical-align: middle;
     font-family: Gilroy;
@@ -16,40 +18,21 @@
     font-size: 40px;
     line-height: 120%;
     margin: 40px 16px;
-
 }
-
-.vl {
-    border: 1px solid #121212;
-    height: 140px;
-    padding-top: 40px;
-    margin-top: 15px;
-    
-}
-
-.hl {
-    border: 1px solid #121212;
-    width: 343px;
-    margin: 0 auto;
-}
-
 
 .kyiv-contents {
     display: flex;
+    padding: 16px;
+    gap: 20px;
+    justify-content: center;
+}
+.vertical-line {
+    width: 1px;
+    background-color: #121212;
 }
 
 .rect {
-    margin: 16px 16px 20px 0px;
     width: 100%;
-}
-
-.kyiv-p {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    margin-right: 16px;    
 }
 
 .kyiv-p p{
@@ -60,32 +43,37 @@
     vertical-align: middle;
 }
 
-.left-column {
+.left-column1 {
     border: 1px solid #121212;
 }
 
 .kyiv-img {
-    border-top: 1px solid black;
-    margin-left: 16px;
     width: 100%;
-    
+}
+.kyiv-p {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
 }
 
 @media (min-width: 768px) {
-    .left-column{
+    .left-column1{
         padding: 2.5rem;
     }
 
-    .left-column h1, p {
+    .left-column h1 {
         font-size: 3rem;
     }
 
     .kyiv-p p {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 
-    .rect {
+    .kyiv-text p {
+        font-size: 1.3rem;
     }
+
+    
 
 
 }

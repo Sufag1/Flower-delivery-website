@@ -22,8 +22,6 @@ const Home = () => {
         <Contact />
         <Service />
         <Reviews />
-
-
         </>
      );
 }

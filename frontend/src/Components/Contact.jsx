@@ -22,6 +22,7 @@ const Contact = () => {
                 <div className="follow-ic">
                     <img src={Insta} alt="instagram icon" /><img src={Pinterest} alt="pinterest icon" /><img src={Facebook} alt="facebook icon" /><img src={Twitter} alt="twitter icon" /><img src={Tele} alt="telegram icon" />
                 </div>
+                <div className="follow-vl"></div>
             </div>               
             </div>
             

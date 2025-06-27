@@ -1,5 +1,6 @@
 import ShoppingBag from '../assets/shoppingbag.svg';
 import './Header.css';
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -20,21 +21,31 @@ const Header = () => {
 
         <div className="header-1440">
             <div className="shop-contact">
-                <div className="shop-1440">
-                    <span>Shop</span>
-                </div>
-                <div className="contact-1440">
-                    <span>Contact</span>
-                </div>
+                <Link to="/shop" className='no-underline'>
+                    <div className="shop-1440">
+                        <p>Shop</p>
+                    </div>
+                </Link>
+                
+                <Link to="/contact" className='no-underline'>
+                    <div className="contact-1440">
+                        <p>Contact</p>
+                    </div>
+                </Link>   
             </div>
 
             <div className="sign-cart">
-                <div className="sign-1440">
-                    <span>Sign in</span>
-                </div>
-                <div className="cart-1440">
-                    <span>Cart</span>
-                </div>
+                <Link to="/signin" className='no-underline'>
+                    <div className="sign-1440">
+                        <p>Sign in</p>
+                    </div>
+                </Link>
+                
+                <Link to="/fresh" className='no-underline'>
+                    <div className="cart-1440">
+                        <p>Cart</p>
+                    </div>
+                </Link>
             </div>
         </div>
         </>

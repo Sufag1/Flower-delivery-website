@@ -1,22 +1,31 @@
 import ShoppingBag from '../assets/shoppingbag.svg';
 import './Header.css';
 import { Link } from "react-router-dom";
+import HamburgerMenu from './Hamburger Menu';
+import { useState } from 'react';
 
 
 const Header = () => {
+
+    const [ openHamburger, setOpenHamburger] = useState(false);
+
     return ( 
         <>
         <div className="header">
             <div className="header-icons">
                 <div className="header-ic ham">
-                    &#9776;
-                </div>
+                    <Link className='no-underline' onClick={() => setOpenHamburger(true)}>&#9776;</Link>            
+                </div> 
                 <div className="header-ic shopbag">
-                    <img src={ShoppingBag} alt="" />
+                    <Link to= "/cart"><img src={ShoppingBag} alt="" /></Link>
                 </div>
             </div>
         </div>
 
+        {/* Hamburger Menu Drawer */}
+
+        <HamburgerMenu isOpen={openHamburger} onClose={() => setOpenHamburger(false)} />
+       
         {/* 1440 Nav bar */}
 
         <div className="header-1440">

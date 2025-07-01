@@ -1,5 +1,12 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import './Category.css';
+import { Link } from "react-router-dom";
+import FreshStamp from "../../assets/fresh.png";
+import DriedStamp from "../../assets/dried.png";
+import LiveStamp from "../../assets/live plants.png";
+import AromaStamp from "../../assets/aroma.png";
+import FreshenerStamp from "../../assets/fresheners.png";
 
 const Category = () => {
   const { categoryType } = useParams();
@@ -7,7 +14,6 @@ const Category = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // Map the route param to actual category names used in your database
   const categoryMap = {
     fresh: "Fresh Flowers",
     dried: "Dried Flowers",
@@ -15,7 +21,18 @@ const Category = () => {
     aroma: "Aroma Candels",
     fresheners: "Fresheners",
   };
+
+  const stampMap = {
+    fresh: FreshStamp,
+    dried: DriedStamp,
+    live: LiveStamp,
+    aroma: AromaStamp,
+    fresheners: FreshenerStamp,
+  };
+
   const categoryName = categoryMap[categoryType];
+  const stampImage = stampMap[categoryType];
+
 
   useEffect(() => {
     if (!categoryName) {
@@ -31,11 +48,11 @@ const Category = () => {
         );
         const data = await res.json();
 
-        // Filter flowers by category
-        const filtered = data.filter(
+        const filtered = data.flowers.filter(
           (flower) => flower.category === categoryName
         );
         setFlowers(filtered);
+        console.log(data.imageUrl);
       } catch (err) {
         setError("Error fetching flowers.");
         console.error(err);
@@ -47,7 +64,7 @@ const Category = () => {
   }, [categoryName]);
 
   if (loading) {
-    return <div>Loading flowers...</div>;
+    return <div >Loading flowers...</div>;
   }
 
   if (error) {
@@ -59,19 +76,27 @@ const Category = () => {
   }
 
   return (
+    <>
     <div className="category-page">
-      <h1>{categoryName}</h1>
-      <div className="flowers-grid">
-        {flowers.map((flower) => (
-          <div key={flower._id} className="flower-item">
-            <img src={flower.imageUrl} alt={flower.name} />
-            <h3>{flower.name}</h3>
-            <p>{flower.description}</p>
-            <span>Price: ${flower.price}</span>
-          </div>
-        ))}
-      </div>
-    </div>
+        <div className="category-stamp-img">
+            <img className="category-stamp" src={stampImage} alt="stamp" />
+        </div>
+
+        <div className="flowers-grid">
+            {flowers.map((flower) => (
+                <Link to={`/flower/${flower._id}`} key={flower._id}>
+                    <div className="flower-item">
+                        <img src={flower.image} alt={flower.name} />
+                        <div className="flower-np">
+                            <h6>{flower.name}</h6>
+                            <p>Price: ${flower.price}</p>
+                        </div>
+                    </div>
+                </Link>
+            ))}
+        </div>
+      </div>    
+      </>
   );
 };
 

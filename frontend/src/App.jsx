@@ -12,15 +12,6 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/home' element={<Home />}></Route>
-          {/* <Route path='/fresh' element={<Fresh />}></Route>
-          <Route path='/aroma' element={<Aroma />}></Route>
-          <Route path='/fresheners' element={<Fresheners />}></Route>
-          <Route path='/live' element={<Live />}></Route>
-          <Route path='/dried' element={<Dried />}></Route>
-          <Route path='/cart' element={<Cart />}></Route>
-          <Route path='/shop' element={<Shop />}></Route>
-          <Route path='/signin' element={<Signin />}></Route>
-          <Route path='/contact' element={<UserContact />}></Route> */}
           <Route path="/category/:categoryType" element={<Category />} />
         </Routes>
         <Footer />

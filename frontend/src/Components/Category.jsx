@@ -13,14 +13,14 @@ const Category = () => {
         <div className="all-flowers">
 
             <div className="fresh all">
-                <Link to="/fresh" className='no-underline'>
+                <Link to="/category/fresh" className='no-underline'>
                     <div className="fresh-text">
                         <h3>Fresh Flowers</h3>
                         <div className="shop-arrow"><p>Shop now<span>&#8594;</span></p></div>
                     </div>
                 </Link>
                 
-                <Link to="/fresh" className='no-underline'>
+                <Link to="/category//fresh" className='no-underline'>
                     <div className="fresh-img">
                         <img src={Fresh} alt="fresh flowers link" />
                     </div>
@@ -29,13 +29,13 @@ const Category = () => {
             
             <div className="dried all">
 
-                <Link to = "/dried">
+                <Link to = "/category/dried">
                     <div className="dried-img">
                         <img src={Dried} alt="dried flowers link" />
                     </div>
                 </Link>
 
-                <Link to="/dried" className='no-underline'>
+                <Link to="/category/dried" className='no-underline'>
                     <div className="dried-text">
                         <h3>Dried Flowers</h3>
                         <div className="shop-arrow"><p><span>&#8592;</span>    Shop now</p></div>
@@ -45,14 +45,14 @@ const Category = () => {
             
             <div className="live all">
 
-                <Link to="/live" className='no-underline'>
+                <Link to="/category/live" className='no-underline'>
                     <div className="live-text">
                         <h3>Live Plants </h3>
                         <div className="shop-arrow"><p>Shop now   <span>&#8594;</span></p></div>
                     </div>
                 </Link>
                  
-                <Link to="/live">
+                <Link to="/category/live">
                     <div className="live-img">
                         <img src={Live} alt="live plants flowers link" />
                     </div>
@@ -60,13 +60,13 @@ const Category = () => {
             </div>
            
            <div className="aroma all">
-                <Link to="/aroma">
+                <Link to="/category/aroma">
                     <div className="aroma-img">
                         <img src={Aroma} alt="aroma plants flowers link" />
                     </div>
                 </Link>
                 
-                <Link to="/aroma" className='no-underline'>
+                <Link to="/category/aroma" className='no-underline'>
                     <div className="aroma-text">
                         <h3>Aroma Candels</h3>
                         <div className="shop-arrow "><p><span>&#8592;</span>   Shop now</p></div>
@@ -77,14 +77,14 @@ const Category = () => {
 
             <div className="fresheners all">
 
-                <Link to="/fresheners" className='no-underline'>
+                <Link to="/category/fresheners" className='no-underline'>
                     <div className="fresheners-text">
                         <h3>Fresheners</h3>
                         <div className="shop-arrow"><p>Shop now   <span>&#8594;</span></p></div> 
                     </div>
                 </Link>
                  
-                 <Link to="/fresheners">
+                 <Link to="/category/fresheners">
                     <div className="fresheners-img">
                         <img src={Fresheners} alt="fresheners flowers link" />
                     </div>

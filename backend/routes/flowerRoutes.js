@@ -30,6 +30,8 @@ const upload = multer({ storage });
 
 // Routes
 
+router.get("/random", getRandomFlowers);
+
 router.get("/", getFlowers);
 
 router.get("/:id", getFlower);

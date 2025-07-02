@@ -91,10 +91,21 @@ const deleteFlower = async (req, res) => {
   }
 };
 
+
+const getRandomFlowers = async (req, res) => {
+  try {
+    const flowers = await Flower.aggregate([{ $sample: { size: 4 } }]);
+    res.json({ flowers });
+  } catch (error) {
+    res.status(500).json({ message: "Failed to fetch random flowers." });
+  }
+};
+
 module.exports = {
   getFlowers,
   getFlower,
   createFlower,
   updateFlower,
   deleteFlower,
+  getRandomFlowers,
 };

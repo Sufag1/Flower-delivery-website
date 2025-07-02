@@ -1,6 +1,8 @@
 const Flower = require("../models/flowerModels");
 const mongoose = require("mongoose");
 
+
+
 // Get all flowers
 const getFlowers = async (req, res) => {
   try {
@@ -91,10 +93,23 @@ const deleteFlower = async (req, res) => {
   }
 };
 
+
+// Get four random flowers
+
+const getRandomFlowers = async (req, res) => {
+  try {
+    const flowers = await Flower.aggregate([{ $sample: { size: 4 } }]);
+    res.json({ flowers });
+  } catch (error) {
+    res.status(500).json({ message: "Failed to fetch suggested flowers." });
+  }
+};
+
 module.exports = {
   getFlowers,
   getFlower,
   createFlower,
   updateFlower,
   deleteFlower,
+  getRandomFlowers,
 };

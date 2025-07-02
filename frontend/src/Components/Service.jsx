@@ -1,6 +1,7 @@
 import './Service.css';
 import ServiceImg from '../assets/image (1).png';
 import ContentImg from '../assets/content.jpg';
+import ContentImg2 from '../assets/conten.png'
 
 const Service = () => {
     return ( 
@@ -23,7 +24,8 @@ const Service = () => {
             
 
             <div className="service-content">
-                <img src={ContentImg} alt="content banner" />
+                <img src={ContentImg} alt="content banner" className="mob" />
+                <img src={ContentImg2} alt="content banner" className="desk" />
                 <div className="wedding-text">
                     <h4>service</h4>
                     <h2>Wedding & Event Decor</h2>

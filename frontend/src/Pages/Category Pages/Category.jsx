@@ -2,11 +2,12 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import './Category.css';
 import { Link } from "react-router-dom";
-import FreshStamp from "../../assets/fresh.png";
-import DriedStamp from "../../assets/dried.png";
-import LiveStamp from "../../assets/live plants.png";
-import AromaStamp from "../../assets/aroma.png";
-import FreshenerStamp from "../../assets/fresheners.png";
+import StampImage from "../../assets/fresh-hero.png";
+// import FreshStamp from "../../assets/fresh.png";
+// import DriedStamp from "../../assets/dried.png";
+// import LiveStamp from "../../assets/live plants.png";
+// import AromaStamp from "../../assets/aroma.png";
+// import FreshenerStamp from "../../assets/fresheners.png";
 
 const Category = () => {
   const { categoryType } = useParams();
@@ -22,16 +23,16 @@ const Category = () => {
     fresheners: "Fresheners",
   };
 
-  const stampMap = {
-    fresh: FreshStamp,
-    dried: DriedStamp,
-    live: LiveStamp,
-    aroma: AromaStamp,
-    fresheners: FreshenerStamp,
-  };
+  // const stampMap = {
+  //   fresh: FreshStamp,
+  //   dried: DriedStamp,
+  //   live: LiveStamp,
+  //   aroma: AromaStamp,
+  //   fresheners: FreshenerStamp,
+  // };
 
   const categoryName = categoryMap[categoryType];
-  const stampImage = stampMap[categoryType];
+  // const stampImage = stampMap[categoryType];
 
 
   useEffect(() => {
@@ -64,7 +65,7 @@ const Category = () => {
   }, [categoryName]);
 
   if (loading) {
-    return <div >Loading flowers...</div>;
+    return <div className="flowerloading" >Loading flowers...</div>;
   }
 
   if (error) {
@@ -72,14 +73,15 @@ const Category = () => {
   }
 
   if (flowers.length === 0) {
-    return <div>No flowers found in the "{categoryName}" category.</div>;
+    return <div className="noflowersm">No flowers found in the "{categoryName}" category.</div>;
   }
 
   return (
     <>
     <div className="category-page">
         <div className="category-stamp-img">
-            <img className="category-stamp" src={stampImage} alt="stamp" />
+            <img className="category-stamp" src={StampImage} alt="stamp" />
+            <h3>{categoryName}</h3>
         </div>
 
         <div className="flowers-grid">

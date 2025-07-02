@@ -151,6 +151,14 @@
     border-top: none ;
 }
 
+.desk {
+    display: none;
+}
+
+.mob {
+    display: block;
+}
+
 @media (min-width: 768px) {
 
     .service h1 {
@@ -221,10 +229,14 @@
     .servb img {
         height: 90vh;
     }
-    
 
-    
+    .desk {
+        display: none;
+    }
 
+    .mob {
+        display: block;
+}
 }
 
 
@@ -328,6 +340,23 @@
         letter-spacing: 3%;
         vertical-align: middle;
         text-transform: uppercase;
+    }
 
+    .mob {
+        display: none;
+    }
+
+    .desk {
+        display: block;
+    }
+}
+
+@media (min-width: 1024px) {
+    .mob {
+        display: none;
+    }
+
+    .desk {
+        display: block;
     }
 }

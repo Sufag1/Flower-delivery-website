@@ -65,7 +65,7 @@ const Category = () => {
   }, [categoryName]);
 
   if (loading) {
-    return <div className="flowerloading" >Loading flowers...</div>;
+    return <div className="flowerloading">Loading flowers...</div>;
   }
 
   if (error) {
@@ -86,7 +86,7 @@ const Category = () => {
 
         <div className="flowers-grid">
             {flowers.map((flower) => (
-                <Link to={`/flower/${flower._id}`} key={flower._id}>
+                <Link to={`/product/${flower._id}`} key={flower._id}>
                     <div className="flower-item">
                         <img src={flower.image} alt={flower.name} />
                         <div className="flower-np">

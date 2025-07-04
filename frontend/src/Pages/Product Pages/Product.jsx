@@ -9,7 +9,7 @@ const Product = () => {
     const [flower, setFlower] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(1);
     const [randomFlowers, setRandomFlowers] = useState(null);
 
     const incrementCount = () => {
@@ -59,9 +59,9 @@ const Product = () => {
             }, []);
 
 
-        if(loading) return <div>Flower Loading...</div>
+        if(loading) return <div className="flowerloading">Flower Loading...</div>
         if(error) return <div>{error}</div>
-        if(!flower) return <div>Flower not Found</div>
+        if(!flower) return <div className="noflowersmsg">Flower not Found</div>
 
 
 
@@ -71,16 +71,16 @@ const Product = () => {
             <div className="product-card">
                 <div className="product-image">
                     <img src={flower.image} alt="flower pic" className="flower-image" />
+                    <h5 className="producttext hh5">BOUQUETS FRESH FLOWERS / QUICK ORDER</h5>
+                    <h3 className="producttext hh3">{flower.name} - ${flower.price}</h3>
                 </div>
 
                 <div className="product-details">
-                    <h5 className="producttext">BOUQUETS FRESH FLOWERS / QUICK ORDER</h5>
-                    <h3 className="producttext">{flower.name}</h3>
-                    <p className="producttext">{flower.description}</p>
+                    <p className="producttext pp">{flower.description}</p>
                 </div>
 
                 <div className="flower-quantity">
-                    <h3>Quantity</h3>
+                    <h3 className="qh">Quantity</h3>
                     <div className="quantity-flex">
                         <button className="incdec" onClick={decrementCount}>-</button>
                         <div className="count-display">{count}</div>
@@ -94,16 +94,47 @@ const Product = () => {
 
 
 
+            
+
+
+
             </div>
+
+            { /* 1440 screen */}
+            <div className="container-1440">
+                <div className="image-1140">
+                    <img src={flower.image} alt="flower pic" className="flower-image" />
+                </div>
+                <div className="details-1440">
+                    <h5 className="producttext hh5">BOUQUETS FRESH FLOWERS / QUICK ORDER</h5>
+                    <h3 className="producttext hh3">{flower.name} - ${flower.price}</h3>
+                    <p className="producttext pp">{flower.description}</p>
+                    <div className="qfl">
+                        <h3 className="qh">Quantity</h3>
+                        <div className="qbtn">
+                            <button className="incdec" onClick={decrementCount}>-</button>
+                            <div className="count-display"> <span className="count">{count}</span> </div>
+                            <button className="incdec" onClick={incrementCount}>+</button>
+                        </div>
+                </div>
+                <div className="add-basket-con">
+                    <button className="add-basket-btn">ADD TO BASKET</button>
+                </div>
+            </div>
+    </div>
 
             <div className="ymal">
                 <h3>You may also like…</h3>
             </div>
 
             <div className="suggestions">
-                <div className="random-flower">
-                    <img src={randomFlowers} alt="" />
-                </div>
+                {randomFlowers && randomFlowers.map((item) => (
+                    <div className="random-flower" key={item._id}>
+                        <img src={item.image} alt={item.name} />
+                        <h5 className="rh5">{item.name}</h5>
+                        <p className="rp">${item.price}</p>
+                    </div>
+                 ))}
             </div>
 
         </div>

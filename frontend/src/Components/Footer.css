@@ -319,11 +319,11 @@ li {
     }
 
     .wrap-footer2 {
-        width: 100%;
+        width: 384px;
         border: none;
     }
     .wrap-footer3 {
-        width: 100%;
+        width: 382px;
     }
 
     .wrap-footer {
@@ -359,6 +359,11 @@ li {
         text-align: start;
     }
 
+    .remember-text {
+        padding: 40px 0px 8px 0px;
+    }
+
+
     .remember-text h3 {
         padding-left: 20px;
     }
@@ -372,8 +377,6 @@ li {
 
     .footer-desktop .shop {
         width: 100%;
-        margin: 0px;
-        padding: 2rem 0px 0px 20px;
         border: 1px solid #121212;
     }
 
@@ -428,23 +431,25 @@ li {
         line-height: 120%;
         letter-spacing: 2.5%;
         vertical-align: middle;
-        margin-top: 10px;
 
     }
 
      .contact-footer {
-        display: block;
-        padding-top: 20px;
         width: 100%;
         border: 1px solid #121212;
-        padding-left: 20px;
     }
 
+    .address, .phone, .general, .follow, .shop, .about-footer {
+        padding: 0;
+    }
+
+    .shop {
+        padding: 20px 0px 00px 0px;
+    }
     .about-footer {
-        padding: 0px;
-        padding-top: 40px;
         border: 1px solid #121212;
-        padding-left: 20px;
+        padding: 20px 0px 8px 0px;
+
     }
 
 }

@@ -183,7 +183,7 @@
     }
     .suggestions {
         display: flex;
-        width: 1022px;
+        width: 100%;
     }
 
     .random-flower  {
@@ -303,6 +303,6 @@
 
 @media (min-width: 1440px){
     .suggestions {
-        width: 1438px;
+        width: 100%;
     }
 }

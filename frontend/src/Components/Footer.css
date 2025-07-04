@@ -456,6 +456,7 @@ li {
 
 @media (min-width: 1440px) {
     .footer-desktop {
-        width: 1440px;
+        width: 100%;
     }
+
 }

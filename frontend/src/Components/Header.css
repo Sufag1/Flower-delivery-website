@@ -88,7 +88,7 @@
     } 
 }
 
-@media (min-width:1440px) {
+@media (min-width: 1440px) {
 
 
     .header {
@@ -99,9 +99,6 @@
         justify-content: space-between;
         border-top: 1px solid #121212;
         width: 100%;
-    }
-    .sign-cart {
-        margin-right: -67px;
     }
     
     .header-1440  p {
@@ -120,5 +117,5 @@
         align-items: center;
         width: 100%;
         border: 1px solid #121212;
-    }    
+    }
 }

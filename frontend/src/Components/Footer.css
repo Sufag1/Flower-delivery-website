@@ -444,7 +444,7 @@ li {
     }
 
     .shop {
-        padding: 20px 0px 00px 0px;
+        padding: 20px 0px 0px 0px;
     }
     .about-footer {
         border: 1px solid #121212;
@@ -452,4 +452,10 @@ li {
 
     }
 
+}
+
+@media (min-width: 1440px) {
+    .footer-desktop {
+        width: 1440px;
+    }
 }

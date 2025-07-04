@@ -101,10 +101,10 @@
         border-top: 1px solid #121212;
         width: 100%;
     }
-    .shop-contact, .sign-cart {
-        display: flex;
-        width: 12%;
+    .sign-cart {
+        margin-right: -67px;
     }
+    
     .header-1440  p {
         font-family: Gilroy;
         font-weight: 500;

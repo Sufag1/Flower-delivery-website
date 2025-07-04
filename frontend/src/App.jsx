@@ -7,7 +7,7 @@ import Category from './Pages/Category Pages/Category';
 import Product from './Pages/Product Pages/Product';
 function App() {
   return (
-    <div className="App">
+    <div className="App-container">
       <>
         <Header />
         <Routes>

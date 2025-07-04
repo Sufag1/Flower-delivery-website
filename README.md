@@ -1,15 +1,13 @@
-
-# 🌸 Flower Delivery Web App
+# 🌸 Flower Delivery Web App - Frontend
 
 A full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) web application that allows admins to manage a catalog of flowers — including uploading images, entering details like name, category, price, and description.
 
 
-
 ## 🚀 Live Demo
-🔗 [Live Demo](https://flower-delivery-website-admin.onrender.com) 
+🔗 [Live Demo](https://flower-delivery-website-frontend.onrender.com) 
 
 ## 🚀 Presentation link
-🔗 [Watch Loom Video](https://www.loom.com/share/cc384bd4725547f4b396862316c74844?sid=6b9ba347-a936-4c82-8e29-9ba2494da0d6)
+🔗 [Watch Loom Video]()
 
 ## ✨ Features
 
@@ -42,5 +40,5 @@ This project is open-source under the MIT License.
 👨‍💻 Author
 Developed by Farouq Abubakar
 💌 Contact me at farouqabubakar99@gmail.com
-- **GitHub Repo Link** (https://github.com/Sufag1/Recipe-website.git)   
+- **GitHub Repo Link** (https://github.com/Sufag1/Flower-delivery-website.git)   
 - **Author Info** → Farouq Abubakar, Sufag1, and farouqabubakar99a@gmail.com.  

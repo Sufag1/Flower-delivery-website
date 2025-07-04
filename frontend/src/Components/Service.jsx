@@ -1,7 +1,7 @@
 import './Service.css';
-import ServiceImg from '../assets/image (1).png';
+import ServiceImg from '../assets/image (1).webp';
 import ContentImg from '../assets/content.jpg';
-import ContentImg2 from '../assets/conten.png'
+import ContentImg2 from '../assets/conten.webp'
 
 const Service = () => {
     return ( 

@@ -1,5 +1,5 @@
 import './Contact.css';
-import RightColumn from '../assets/right col.png';
+import RightColumn from '../assets/right col.webp';
 import Phone from '../assets/phone icon.svg';
 import Location from '../assets/locationic.svg';
 import Insta from '../assets/Instagram.svg';

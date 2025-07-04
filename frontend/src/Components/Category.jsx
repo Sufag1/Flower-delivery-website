@@ -1,9 +1,9 @@
 import './Category.css';
-import Fresh from '../assets/fresh.png';
-import Dried from '../assets/dried.png';
-import Live from '../assets/live plants.png';
-import Aroma from '../assets/aroma.png';
-import Fresheners from '../assets/fresheners.png'
+import Fresh from '../assets/fresh.webp';
+import Dried from '../assets/dried.webp';
+import Live from '../assets/live plants.webp';
+import Aroma from '../assets/aroma.webp';
+import Fresheners from '../assets/fresheners.webp'
 import { Link } from "react-router-dom";
 
 

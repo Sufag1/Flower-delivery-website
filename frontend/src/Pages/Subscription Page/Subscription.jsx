@@ -1,9 +1,9 @@
 import BRArrow from "../../assets/arrow-bottom-right.svg";
-import Foryou from "../../assets/foryou.png";
-import ClassicPlan from "../../assets/classicplan.png";
+import Foryou from "../../assets/foryou.webp";
+import ClassicPlan from "../../assets/classicplan.webp";
 import SeasonalPlan from "../../assets/seasonalplan.jpg";
 import LuxePlan from "../../assets/luxeplan.jpg";
-import Happiness from "../../assets/image (1).png";
+import Happiness from "../../assets/image (1).webp";
 
 
 const Subscription = () => {

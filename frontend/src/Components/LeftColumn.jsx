@@ -1,5 +1,5 @@
 import "./LeftColumn.css";
-import Rectangle from "../assets/Rectangle 113.png";
+import Rectangle from "../assets/Rectangle 113.webp";
 
 const LeftColumn = () => {
   return (

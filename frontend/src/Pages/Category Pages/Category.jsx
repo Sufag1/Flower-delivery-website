@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import './Category.css';
 import { Link } from "react-router-dom";
-import StampImage from "../../assets/fresh-hero.png";
+import StampImage from "../../assets/fresh-hero.webp";
 // import FreshStamp from "../../assets/fresh.png";
 // import DriedStamp from "../../assets/dried.png";
 // import LiveStamp from "../../assets/live plants.png";

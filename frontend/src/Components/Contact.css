@@ -18,6 +18,7 @@
     font-weight: 500;
     font-style: Medium;
     font-size: 26px;
+    height: 100%;
 }
 
 .follow-ic {
@@ -145,11 +146,13 @@
         margin-top: -4px;
         border-right: 1px solid #121212;
         padding-top: 20px;
+        height: auto;
     }
 
     .follow-ic {
         width: 100%;
         text-align: center;
+        height: auto;
     }
 
     .follow-ic img {
@@ -249,6 +252,16 @@
     .contact-main-div {
         display: flex;
         flex-direction: row-reverse;
+        align-items: stretch;
+    }
+
+    .kyiv,
+    .to-contact-us {
+        display: flex;
+        flex-direction: column;
+    }
+    .bottom-block {
+        height: auto;
     }
 
     .kyiv {
@@ -278,7 +291,7 @@
     }
 
     .kyiv-follow {
-        height: 25%;
+        height: auto;
     }
     .kyiv-follow h3 {
         border-left: 1px solid #121212;
@@ -296,10 +309,28 @@
         font-size: 1.3rem;
     }
 
+    .phone-no {
+        padding: 0;
+    }
+
     .loc h6 {
         font-size: 1.3rem;
     }
+    .address-loc {
+        padding: 0;
+        margin: 0;
+    }
 
+    .address-loc h5 {
+        padding: 0;
+    }
+
+}
+
+@media (min-width: 1028px) {
+    .kyiv-follow {
+        height: auto;
+    }
 }
 
 @media (min-width: 1440px) {
@@ -313,11 +344,11 @@
     }
 
     .address-loc {
-        height: 140%;
+        height: auto;
     }
 
     .kyiv-follow h3 {
-        height: 40%;
+        height: auto;
     }
 
     .follow-ic img {

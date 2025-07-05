@@ -361,3 +361,21 @@
     }
 }
 
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .service-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .wedding-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+  }
+}
+

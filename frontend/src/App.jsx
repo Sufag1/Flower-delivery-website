@@ -5,6 +5,7 @@ import Footer from './Components/Footer';
 import Home from './Pages/Home/Home';
 import Category from './Pages/Category Pages/Category';
 import Product from './Pages/Product Pages/Product';
+import Subscription from './Pages/Subscription Page/Subscription';
 function App() {
   return (
     <div className="App-container">
@@ -15,6 +16,7 @@ function App() {
           <Route path='/home' element={<Home />}></Route>
           <Route path="/category/:categoryType" element={<Category />} />
           <Route path="/product/:id" element={<Product />} />
+          <Route path="/subscription" element={<Subscription />}></Route>
         </Routes>
         <Footer />
       </>

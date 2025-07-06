@@ -2,8 +2,16 @@ import './Service.css';
 import ServiceImg from '../assets/image (1).webp';
 import ContentImg from '../assets/content.jpg';
 import ContentImg2 from '../assets/conten.webp'
-
+import { useNavigate } from 'react-router-dom';
 const Service = () => {
+
+
+    const navigate = useNavigate();
+
+    const goToSubscription = () => {
+        navigate("/subscription");
+    };
+
     return ( 
         <>
         <div className="service">
@@ -17,7 +25,7 @@ const Service = () => {
                     <h2>Flower Subcriptions</h2>
                     <p>Experience the convenience and savings of regular flower deliveries with our flexible subscription service - up to 30% more profitable than one-time purchases.</p>
                     <div className="hp-btn">
-                        <button>SUBSCRIBE NOW</button>
+                        <button onClick={goToSubscription}>SUBSCRIBE NOW</button>
                     </div>
             </div>
             </div>

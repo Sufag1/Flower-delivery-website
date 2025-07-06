@@ -8,6 +8,8 @@ footer h3 {
 
 .remember-text {
     padding: 40px 16px 8px 16px;
+    border-left: 1px solid #121212;
+    border-right: 1px solid #121212;
 }
 
 .remember-text h3 {
@@ -75,7 +77,7 @@ button {
     padding-right: 79px;
 }
 .follow {
-    margin-bottom: 40px;
+    padding-bottom: 40px;
 }
 .address h6 {
     margin-bottom: 8px;
@@ -299,6 +301,7 @@ li {
         padding-left: 0px;
         padding-right: 0px;
         text-align: center;
+        border-top: 1px solid #121212;
     }
 
     .contact {

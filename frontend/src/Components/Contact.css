@@ -325,12 +325,15 @@
         padding: 0;
     }
 
-}
-
-@media (min-width: 1028px) {
-    .kyiv-follow {
-        height: auto;
+    .phone-no {
+        padding: 40px 0;
+        
     }
+
+    .address-loc {
+        padding: 40px 0;
+    }
+
 }
 
 @media (min-width: 1440px) {

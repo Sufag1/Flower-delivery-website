@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Product.css";
-
+import { HashLink } from "react-router-hash-link";
 
 const Product = () => {
 
@@ -68,7 +68,7 @@ const Product = () => {
     return ( 
         <>
         <div className="flower-detail-page">
-            <div className="product-card">
+            <div className="product-card" id="product-card">
                 <div className="product-image">
                     <img src={flower.image} alt="flower pic" className="flower-image" />
                     <h5 className="producttext hh5">BOUQUETS FRESH FLOWERS / QUICK ORDER</h5>
@@ -101,7 +101,7 @@ const Product = () => {
             </div>
 
             { /* 1440 screen */}
-            <div className="container-1440">
+            <div className="container-1440" id="container-1440">
                 <div className="image-1140">
                     <img src={flower.image} alt="flower pic" className="flower-image" />
                 </div>
@@ -127,13 +127,31 @@ const Product = () => {
                 <h3>You may also like…</h3>
             </div>
 
+            
             <div className="suggestions">
-                {randomFlowers && randomFlowers.map((item) => (
-                    <div className="random-flower" key={item._id}>
-                        <img src={item.image} alt={item.name} />
-                        <h5 className="rh5">{item.name}</h5>
-                        <p className="rp">${item.price}</p>
-                    </div>
+                {randomFlowers && randomFlowers.map((flower) => (
+                    <HashLink to={`/product/${flower._id}#product-card`} key={flower._id}>
+                        <div className="random-flower">
+                            <img src={flower.image} alt={flower.name} />
+                            <h5 className="rh5">{flower.name}</h5>
+                            <p className="rp">${flower.price}</p>
+                        </div>
+                    </HashLink>
+                    
+                 ))}
+            </div>
+
+
+            <div className="suggestions-1440">
+                {randomFlowers && randomFlowers.map((flower) => (
+                    <HashLink to={`/product/${flower._id}#container-1440`} key={flower._id}>
+                        <div className="random-flower">
+                            <img src={flower.image} alt={flower.name} />
+                            <h5 className="rh5">{flower.name}</h5>
+                            <p className="rp">${flower.price}</p>
+                        </div>
+                    </HashLink>
+                    
                  ))}
             </div>
 

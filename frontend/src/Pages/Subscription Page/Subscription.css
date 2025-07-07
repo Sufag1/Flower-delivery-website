@@ -12,7 +12,7 @@
 }
 
 .foryourself h6, .asagift h6, .forbiz h6 {
-    font-family: Gilroy;
+    font-family: 'Gilroy';
     font-weight: 500;
     font-style: Medium;
     font-size: 16px;
@@ -224,103 +224,103 @@ ul {
 }
 
 .foryourself h1 {
-    font-family: Gilroy;
+    font-family: 'Gilroy';
     font-weight: 600;
-    font-style: Semibold;
+    font-style: 'Semibold';
     font-size: 34px;
 }
 
 .foryourself h6, .asagift h6, .forbiz h6 {
-    font-family: Gilroy;
+    font-family: 'Gilroy';
     font-weight: 500;
     font-style: Medium;
     font-size: 16px;
 }
 
 .forbiz li, .asagift li, .foryourself li {
-    font-family: Gilroy;
+    font-family: 'Gilroy';
     font-weight: 400;
-    font-style: Regular;
+    font-style: 'Regular';
     font-size: 16px;
 }
 
 .howitworks h2 {
-    font-family: Gilroy;
+    font-family: 'Gilroy';
     font-weight: 600;
-    font-style: Semibold;
+    font-style: 'Semibold';
     font-size: 34px;
 }
 
 .chooseaplan h3, .freq-duration h3, .pay-once h3 {
-    font-family: Gilroy;
+    font-family: 'Gilroy';
     font-weight: 500;
     font-style: Medium;
     font-size: 26px;
 }
 
 .chooseaplan p, .freq-duration p, .pay-once p {
-    font-family: Gilroy;
+    font-family: 'Gilroy';
     font-weight: 400;
-    font-style: Regular;
+    font-style: 'Regular';
     font-size: 16px;
 }
 
 .selectplan h6 {
-    font-family: Gilroy;
+    font-family: 'Gilroy';
     font-weight: 500;
     font-style: Medium;
     font-size: 12px;
 }
 .selectplan h3 {
-    font-family: Gilroy;
+    font-family: 'Gilroy';
     font-weight: 500;
     font-style: Medium;
     font-size: 26px;
 }
 
 .selectplan p {
-    font-family: Gilroy;
+    font-family: 'Gilroy';
     font-weight: 400;
-    font-style: Regular;
+    font-style: 'Regular';
     font-size: 16px;
 }
 
 .classic h4, .seasonal h4, .luxe h4 {
-    font-family: Gilroy;
+    font-family: 'Gilroy';
     font-weight: 500;
     font-style: Medium;
     font-size: 18px;
 }
 
 .classic li, .seasonal li, .luxe li {
-    font-family: Gilroy;
+    font-family: 'Gilroy';
     font-weight: 400;
-    font-style: Regular;
+    font-style: 'Regular';
     font-size: 16px;
 }
 
 .how-often-div h4 {
-    font-family: Gilroy;
+    font-family: 'Gilroy';
     font-weight: 400;
-    font-style: Regular;
+    font-style: 'Regular';
     font-size: 22px;
 }
 
 .how-often-div p {
-    font-family: Gilroy;
+    font-family: 'Gilroy';
     font-weight: 400;
-    font-style: Regular;
+    font-style: "Regular";
     font-size: 16px;
 }
 
 .faq-div h2 {
-    font-family: Gilroy;
+    font-family:'Gilroy';
     font-weight: 600;
-    font-style: Semibold;
+    font-style: 'Semibold';
     font-size: 34px;
 }
 .faqs h6 {
-    font-family: Gilroy;
+    font-family: "Gilroy";
     font-weight: 500;
     font-style: Medium;
     font-size: 16px;
@@ -348,7 +348,7 @@ ul {
         width: 80%;
     }
     .selectplan h6 {
-        font-family: Gilroy;
+        font-family: "Gilroy", sans-serif;
         font-weight: 500;
         font-style: Medium;
         font-size: 14px;

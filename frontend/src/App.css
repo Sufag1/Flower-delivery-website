@@ -18,3 +18,9 @@ html, body, #root {
   src: url('./assets/Fonts/Gilroy-SemiBold.ttf') format('truetype');
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Zapfino';
+  src: url('./assets/Fonts/ZapfinoForteLTPro.otf') format('truetype');
+  font-style: normal;
+}

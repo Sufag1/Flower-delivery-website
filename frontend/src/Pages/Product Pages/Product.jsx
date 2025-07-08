@@ -28,14 +28,12 @@ const Product = () => {
                 const data = await res.json();
                 setFlower(data);
             }
-
             catch (err) {
                 setError("Failed to load Flower details.");
             } finally {
                 setLoading(false);
             }
         };
-
         fetchFlower();
     }, [id]);
 

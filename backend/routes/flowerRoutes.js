@@ -8,6 +8,7 @@ const {
   createFlower,
   updateFlower,
   deleteFlower,
+  getRandomFlowers
 } = require("../controllers/flowerControllers");
 
 

@@ -1,6 +1,8 @@
 import "./SignUp.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import GoogleLogo from "../../assets/Google.svg";
+import AppleLogo from "../../assets/Apple.svg";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");

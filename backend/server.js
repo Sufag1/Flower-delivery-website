@@ -15,7 +15,7 @@ const app = express();
 // Middlewares
 app.use(express.json());
 app.use(cors({
-  origin: "https://flower-delivery-website-frontend.onrender.com",
+  origin: "https://flower-delivery-website-frontend.onrender.com", "https://flower-delivery-website-admin.onrender.com", ""
   credentials: true,
 }));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
@@ -24,7 +24,7 @@ app.use(passport.initialize());
 // Routes
 app.get("/", (req, res) => {
   res.send("Welcome to the Flower Delivery Website Backend");
-  
+
 });
 
 const flowerRoutes = require("./routes/flowerRoutes");

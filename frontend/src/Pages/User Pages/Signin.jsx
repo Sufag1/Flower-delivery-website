@@ -11,7 +11,7 @@ const SignIn = () => {
 
   const handleSignIn = async () => {
     try {
-      const res = await fetch("https://flower-delivery-website-m4-backend.onrender.com/apiusers/signin", {
+      const res = await fetch("https://flower-delivery-website-m4-backend.onrender.com/api/users/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

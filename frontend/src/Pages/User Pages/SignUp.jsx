@@ -10,7 +10,7 @@ const SignUp = () => {
 
   const handleSignup = async () => {
     try {
-      const res = await fetch("https://flower-delivery-website-m3-api.onrender.com/api/flowers/signup", {
+      const res = await fetch("https://flower-delivery-website-m4-backend.onrender.com/api/userssignup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

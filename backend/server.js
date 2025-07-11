@@ -24,6 +24,7 @@ app.use(passport.initialize());
 // Routes
 app.get("/", (req, res) => {
   res.send("Welcome to the Flower Delivery Website Backend");
+  
 });
 
 const flowerRoutes = require("./routes/flowerRoutes");

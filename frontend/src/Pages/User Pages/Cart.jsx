@@ -1,5 +1,13 @@
-const Cart = () => {
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
+
+const Cart = () => {
+    const [flower, setFlower] = useState(null);
+    const [error, setError] = useState("");
+    const [loading, setLoading] = useState(true);
+    const { id } = useParams();
+    
 
     useEffect(() => {
         const fetchFlower = async () => {

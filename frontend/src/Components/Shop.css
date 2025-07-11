@@ -15,8 +15,9 @@
     border: 1px solid #121212;
 }
 .shop-arrow span {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bolder;
+    margin-left: 10px;
 }
 
 .all-flowers {
@@ -99,6 +100,10 @@
         margin-top: 100px;
         font-size: 1.5rem;
     }
+
+    .fresh-text h3, .dried-text h3, .live-text h3, .aroma-text h3, .fresheners-text h3 {
+        margin-top: 60px;
+    }
    
 }
 
@@ -108,10 +113,19 @@
         justify-content: center;
         align-items: center;
     }
+    .fresh-text h3, .dried-text h3, .live-text h3, .aroma-text h3, .fresheners-text h3 {
+        margin-top: 90px;
+    }
+   
 }
 
 @media (min-width: 1440px) {
     .all-flowers h3 {
         padding-top: 100px;
     }
+
+    .fresh-text h3, .dried-text h3, .live-text h3, .aroma-text h3, .fresheners-text h3 {
+        margin-top: 130px;
+    }
+   
 }

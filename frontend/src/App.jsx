@@ -8,6 +8,9 @@ import Product from './Pages/Product Pages/Product';
 import Subscription from './Pages/Subscription Page/Subscription';
 import About from './Pages/About Us Page/AboutUs';
 import Cart from './Pages/User Pages/Cart';
+import SignIn from './Pages/User Pages/Signin';
+import Contact from './Components/Contact';
+import Cate from './Components/Shop';
 function App() {
   return (
     <div className="App-container">
@@ -21,6 +24,11 @@ function App() {
           <Route path="/subscription" element={<Subscription />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/cart/:id" element={<Cart />}></Route>
+          <Route path="/signin" element={<SignIn />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/shop" element={<Cate />} />
+
+
          
         </Routes>
         <Footer />

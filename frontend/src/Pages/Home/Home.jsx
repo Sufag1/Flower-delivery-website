@@ -1,5 +1,5 @@
 import LeftColumn from "../../Components/LeftColumn";
-import Category from "../../Components/Category";
+import Category from "../../Components/Shop";
 import About from "../../Components/About";
 import Benefits from "../../Components/Benefits";
 import Contact from "../../Components/Contact";

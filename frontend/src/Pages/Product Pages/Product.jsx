@@ -92,10 +92,6 @@ const Product = () => {
 
 
 
-            
-
-
-
             </div>
 
             { /* 1440 screen */}

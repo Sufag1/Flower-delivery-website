@@ -1,0 +1,105 @@
+.signin-box {
+  width: 90%;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.signin-box h6 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.social-button {
+  background: #fff;
+  color: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  padding-right: 5px;
+}
+
+.privacy-terms-links {
+  margin-top: 100px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.signin-container {
+  border: 1px solid #121212;
+}
+
+.signin-box h2 {
+  font-family: 'Gilroy';
+  font-weight: 600;
+  font-style: Semibold;
+  font-size: 34px;
+}
+
+.signin-box h6 {
+  font-family: 'Gilroy';
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .signin-box {
+    width: 70%;
+    margin-top: 100px;
+  }
+
+  .signin-box h6 {
+    margin-top: 3.3rem;
+    margin-bottom: 3.3rem;
+
+    }
+
+    .privacy-terms-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+}
+
+@media (min-width: 1024px){
+  .signin-box h2 {
+    font-family: 'Gilroy';
+    font-weight: 600;
+    font-style: Semibold;
+    font-size: 50px;
+  }
+
+  .signin-box h6 {
+    font-family: 'Gilroy';
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+  }
+
+  .privacy-terms-links a {
+    font-family: 'Gilroy';
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 0%;
+  }
+
+  .signin-box button {
+    height: 70px;
+  }
+
+  .signin-box input {
+    height: 70px;
+  }
+  .signin-box button {
+    font-size: 26px;
+  }
+}

@@ -1,4 +1,4 @@
-import './Category.css';
+import './Shop.css';
 import Fresh from '../assets/fresh.webp';
 import Dried from '../assets/dried.webp';
 import Live from '../assets/live plants.webp';
@@ -38,7 +38,7 @@ const Category = () => {
                 <Link to="/category/dried" className='no-underline'>
                     <div className="dried-text">
                         <h3>Dried Flowers</h3>
-                        <div className="shop-arrow"><p><span>&#8592;</span>    Shop now</p></div>
+                        <div className="shop-arrow"><p><span>&#8592;</span>Shop now</p></div>
                     </div>
                 </Link>
             </div>

@@ -1,0 +1,102 @@
+.signup-box {
+  width: 90%;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.signup-box h6 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.social-button {
+  background: #fff;
+  color: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  padding-right: 5px;
+}
+
+.privacy-terms-links {
+  margin-top: 100px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.signup-container {
+  border: 1px solid #121212;
+}
+
+.signup-box h2 {
+  font-family: 'Gilroy';
+  font-weight: 600;
+  font-style: Semibold;
+  font-size: 34px;
+}
+
+.signup-box h6 {
+  font-family: 'Gilroy';
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .signup-box {
+    width: 70%;
+    margin-top: 100px;
+  }
+
+  .signup-box h6 {
+    margin-top: 3.3rem;
+    margin-bottom: 3.3rem;
+
+    }
+
+    .privacy-terms-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+}
+
+@media (min-width: 1024px){
+  .signup-box h2 {
+    font-family: 'Gilroy';
+    font-weight: 600;
+    font-style: Semibold;
+    font-size: 50px;
+  }
+
+  .signup-box h6 {
+    font-family: 'Gilroy';
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+  }
+
+  .privacy-terms-links a {
+    font-family: 'Gilroy';
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 0%;
+  }
+
+  .signup-box button {
+    height: 70px;
+  }
+
+  .signup-box input {
+    height: 70px;
+  }
+}

@@ -36,7 +36,7 @@ const Header = () => {
                     </div>
                 </Link>
                 
-                <Link to="/contact" className='no-underline'>
+                <Link to="/contact" className='no-underline' >
                     <div className="contact-1440">
                         <p>Contact</p>
                     </div>

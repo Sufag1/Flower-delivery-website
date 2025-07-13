@@ -102,7 +102,7 @@
     }
 
     .fresh-text h3, .dried-text h3, .live-text h3, .aroma-text h3, .fresheners-text h3 {
-        margin-top: 60px;
+        padding-top: 60px;
     }
    
 }
@@ -113,9 +113,14 @@
         justify-content: center;
         align-items: center;
     }
-    .fresh-text h3, .dried-text h3, .live-text h3, .aroma-text h3, .fresheners-text h3 {
-        margin-top: 90px;
+
+    .live-img {
+        height: 100%;
     }
+    .fresheners-img {
+        height: 100%;
+    }
+   
    
 }
 
@@ -125,7 +130,7 @@
     }
 
     .fresh-text h3, .dried-text h3, .live-text h3, .aroma-text h3, .fresheners-text h3 {
-        margin-top: 130px;
+        padding-top: 130px;
     }
    
 }

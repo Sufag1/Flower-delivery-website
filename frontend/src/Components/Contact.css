@@ -334,6 +334,33 @@
         padding: 40px 0;
     }
 
+    .kyiv-follow {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    border-bottom: none;
+}
+
+.kyiv-follow h3 {
+    border-left: 1px solid #121212;
+    font-size: 1.8rem;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0px;
+}
+
+.follow-ic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+
 }
 
 @media (min-width: 1440px) {

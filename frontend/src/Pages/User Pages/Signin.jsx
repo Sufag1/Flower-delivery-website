@@ -3,11 +3,21 @@ import { useState } from "react";
 import GoogleLogo from "../../assets/Google.svg";
 import AppleLogo from "../../assets/Apple.svg";
 import { useNavigate } from "react-router-dom";
+
 const SignIn = () => {
-  const [email, setEmail] = useState(""); // or phone, if you're using phone auth
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [popup, setPopup] = useState({ show: false, message: "", type: "" });
 
   const navigate = useNavigate();
+
+  const showPopup = (message, type) => {
+    setPopup({ show: true, message, type });
+
+    setTimeout(() => {
+      setPopup({ show: false, message: "", type: "" });
+    }, 3000);
+  };
 
   const handleSignIn = async () => {
     try {
@@ -22,20 +32,34 @@ const SignIn = () => {
       const data = await res.json();
 
       if (res.ok) {
-        alert("Sign In successful");
-        localStorage.setItem("token", data.data.token); // Save token to localStorage
-        navigate("/home")
+        localStorage.setItem("token", data.data.token);
+        showPopup("Sign In successful", "success");
+        const redirectPath = localStorage.getItem("redirectAfterLogin");
+        setTimeout(() => {
+          if (redirectPath) {
+            localStorage.removeItem("redirectAfterLogin"); // Clean up
+            navigate(redirectPath);
+          } else {
+            navigate("/home");
+        }
+      }, 3000);
       } else {
-        alert(data.error);
+        showPopup(data.error || "Sign In failed", "error");
       }
     } catch (err) {
       console.error(err);
-      alert("An error occurred");
+      showPopup("An error occurred", "error");
     }
   };
 
   return (
     <div className="signin-container">
+      {popup.show && (
+        <div className={`popup-message ${popup.type}`}>
+          {popup.message}
+        </div>
+      )}
+
       <div className="signin-box">
         <h2 className="signin-title">Greetings! <br />Welcome to luxury gift shop.</h2>
         <h6>Use your email to sign up or log in</h6>
@@ -69,6 +93,8 @@ const SignIn = () => {
           <img src={AppleLogo} alt="Apple" className="icon" />
           CONTINUE WITH APPLE
         </button>
+
+        <h4><a className="signup-a" href="/signup">Sign Up</a> if you don't have an account</h4>
 
         <div className="privacy-terms-links">
           <a href="/privacy">Privacy Policy</a><br />

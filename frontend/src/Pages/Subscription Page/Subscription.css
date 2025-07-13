@@ -326,6 +326,10 @@ ul {
     font-size: 16px;
 }
 
+.happiness {
+    border: 1px solid #121212;
+}
+
 @media (min-width: 768px) {
     .flower-sub-div h2 {
         width: 80%;
@@ -425,6 +429,7 @@ ul {
     .faq-div-margin {
         background-color: #F5F5F7;
         padding: 40px;
+        border:1px solid #121212;
 
     }
     .foryourself h1 {

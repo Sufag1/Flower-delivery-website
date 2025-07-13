@@ -1,0 +1,41 @@
+.success-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.success-message {
+  background-color: #f0fff4;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  max-width: 500px;
+}
+
+.success-message h1 {
+  color: #2e7d32;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.success-message p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.success-btn {
+  margin-top: 1.5rem;
+  padding: 10px 20px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.success-btn:hover {
+  background-color: #256029;
+}

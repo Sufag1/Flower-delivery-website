@@ -20,7 +20,7 @@ const Category = () => {
                     </div>
                 </Link>
                 
-                <Link to="/category//fresh" className='no-underline'>
+                <Link to="/category/fresh" className='no-underline'>
                     <div className="fresh-img">
                         <img src={Fresh} alt="fresh flowers link" />
                     </div>

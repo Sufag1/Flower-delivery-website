@@ -376,3 +376,14 @@
 
 }
 
+@media (min-width: 1440px) {
+    .wedding-text {
+        position: absolute;
+        top: 45%;
+        left: 52%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        padding: 20px;
+  }
+}
+

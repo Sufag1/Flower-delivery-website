@@ -45,7 +45,7 @@ const Category = () => {
     const fetchFlowers = async () => {
       try {
         const res = await fetch(
-          `https://flower-delivery-website-m3-api.onrender.com/api/flowers`
+          `${process.env.BACKEND_URL}/api/flowers`
         );
         const data = await res.json();
 

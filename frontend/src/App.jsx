@@ -12,6 +12,7 @@ import SignIn from './Pages/User Pages/Signin';
 import SignUp from './Pages/User Pages/SignUp';
 import Contact from './Components/Contact';
 import Cate from './Components/Shop';
+import Success from './Pages/User Pages/success';
 function App() {
   return (
     <div className="App-container">
@@ -29,6 +30,7 @@ function App() {
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/shop" element={<Cate />} />
+          <Route path="/success" element={<Success />} />
 
 
          

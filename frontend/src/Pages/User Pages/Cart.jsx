@@ -33,7 +33,7 @@ const Cart = () => {
   }
 
   try {
-    const res = await fetch("https://your-backend-url.com/api/stripe/create-checkout-session", {
+    const res = await fetch(`${process.env.BACKEND_URL}/api/stripe/create-checkout-session`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -49,6 +49,7 @@ const Cart = () => {
     console.error("Error creating Stripe session:", err);
   }
 };
+
 
 
   return (

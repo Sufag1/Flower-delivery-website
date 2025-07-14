@@ -45,7 +45,7 @@ const Category = () => {
     const fetchFlowers = async () => {
       try {
         const res = await fetch(
-          `${process.env.BACKEND_URL}/api/flowers`
+          `${process.env.REACT_APP_BACKEND_URL}/api/flowers`
         );
         const data = await res.json();
 

@@ -62,11 +62,11 @@ const Product = () => {
 };
 
 
-
+//
   useEffect(() => {
     const fetchFlower = async () => {
       try {
-        const res = await fetch("https://flower-delivery-website-m3-api.onrender.com/api/flowers/${id}");
+        const res = await fetch(`https://flower-delivery-website-m3-api.onrender.com/api/flowers/${id}`);
         const data = await res.json();
         setFlower(data);
       } catch (err) {

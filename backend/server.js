@@ -4,7 +4,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const path = require("path");
 const passport = require("passport");
-const stripeRoutes = require("./utils/stripe");
+const stripeRoutes = require("./routes/");
 require("./utils/passport"); // this should come after passport is imported
 
 

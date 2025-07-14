@@ -95,7 +95,7 @@ const SignIn = () => {
           CONTINUE WITH APPLE
         </button>
 
-        <Link className="signup-a" href="/signup"><h4>Sign Up</h4></Link><h4>if you don't have an account</h4>
+        <Link to="/signup" className="signup-a" href="/signup"><h4>Sign Up</h4></Link><h4>if you don't have an account</h4>
 
         <div className="privacy-terms-links">
           <a href="/privacy">Privacy Policy</a><br />

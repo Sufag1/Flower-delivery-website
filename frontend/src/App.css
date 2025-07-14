@@ -24,3 +24,10 @@ html, body, #root {
   src: url('./assets/Fonts/ZapfinoForteLTPro.otf') format('truetype');
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./assets/fonts/Gilroy-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

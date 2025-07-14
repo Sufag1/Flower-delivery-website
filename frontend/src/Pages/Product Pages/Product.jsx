@@ -81,7 +81,7 @@ const Product = () => {
   useEffect(() => {
     const fetchRandomFlowers = async () => {
       try {
-        const res = await fetch(`${process.env.BACKEND_URL}/api/flowers/random`);
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/flowers/random`);
         const data = await res.json();
         setRandomFlowers(data.flowers);
       } catch (err) {

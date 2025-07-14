@@ -31,9 +31,9 @@ const Cart = () => {
     alert("You must be signed in to checkout");
     return;
   }
-
+//for commit
   try {
-    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/stripe/create-checkout-session`, {
+    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL2}/api/stripe/create-checkout-session`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

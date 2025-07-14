@@ -3,6 +3,7 @@ import { useState } from "react";
 import GoogleLogo from "../../assets/Google.svg";
 import AppleLogo from "../../assets/Apple.svg";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");

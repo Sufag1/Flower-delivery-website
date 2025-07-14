@@ -4,6 +4,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const path = require("path");
 const passport = require("passport");
+const stripeRoutes = require("./utils/stripe");
 require("./utils/passport"); // this should come after passport is imported
 
 
@@ -15,13 +16,15 @@ const app = express();
 // Middlewares
 app.use(express.json());
 app.use(cors({
-  origin: ["https://flower-delivery-website-frontend.onrender.com",
-     "https://flower-delivery-website-admin.onrender.com",
-      "http://localhost:3000"],
+  origin: [`${process.env.FRONTEND_URL}`,
+     `${process.env.ADMIN_URL}`,
+      `${process.env.LOCAL_HOST}`],
   credentials: true,
 }));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(passport.initialize());
+app.use("/api/stripe", stripeRoutes);
+
 
 // Routes
 app.get("/", (req, res) => {

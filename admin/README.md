@@ -1,5 +1,5 @@
 
-# 🌸 Flower Delivery Web App
+# 🌸 Flower Delivery Web App - Admin
 
 A full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) web application that allows admins to manage a catalog of flowers — including uploading images, entering details like name, category, price, and description.
 

@@ -34,25 +34,19 @@ const getFlower = async (req, res) => {
 
 // Create a new flower
 const createFlower = async (req, res) => {
-  console.log("Incoming POST /api/flowers request...");
-  console.log("req.body:", req.body);
-  console.log("req.file:", req.file);
-
   const { name, description, price, category } = req.body;
   const image = req.file?.path;
 
-  try {
-    if (!image) {
-      throw new Error("Image was not uploaded successfully.");
-    }
+  console.log("CREATE FLOWER BODY:", JSON.stringify(req.body, null, 2));
+  console.log("Uploaded Image File:", req.file);
 
+  try {
     const flower = new Flower({ name, description, price, category, image });
     const savedFlower = await flower.save();
-
     res.status(201).json(savedFlower);
   } catch (error) {
-    console.error("Error in createFlower:", error.message);
-    res.status(500).json({ error: error.message });
+    console.error("❌ Failed to create flower:", error); 
+    res.status(400).json({ error: error.message });
   }
 };
 

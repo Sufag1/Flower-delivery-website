@@ -37,16 +37,30 @@ const getFlower = async (req, res) => {
 // Create a new flower
 const createFlower = async (req, res) => {
   const { name, description, price, category } = req.body;
-  const image = req.file?.path;
 
   try {
-    const flower = new Flower({ name, description, price, category, image  });
+    if (!req.file || !req.file.path) {
+      return res.status(400).json({ error: "Image upload failed" });
+    }
+
+    const imageUrl = req.file.path;
+
+    const flower = new Flower({
+      name,
+      description,
+      price,
+      category,
+      image: imageUrl,
+    });
+
     const savedFlower = await flower.save();
     res.status(201).json(savedFlower);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    console.error("Create flower error:", error);
+    res.status(500).json({ error: "Failed to create flower" });
   }
 };
+
 
 // Update a flower
 const updateFlower = async (req, res) => {

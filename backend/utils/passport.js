@@ -1,4 +1,3 @@
-// config/passport.js
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const User = require("../models/userModels");
@@ -6,7 +5,7 @@ const bcrypt = require("bcrypt");
 
 passport.use(
   new LocalStrategy(
-    { usernameField: "email" }, // tells passport to use email, not username
+    { usernameField: "email" },
     async (email, password, done) => {
       try {
         const user = await User.findOne({ email });

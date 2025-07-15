@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Stripe = require("stripe");
 
-// Replace with your real Stripe Secret Key from your dashboard
 const stripe = Stripe(`${process.env.STRIPE_SECRET_KEY}`);
 
 router.post("/create-checkout-session", async (req, res) => {
@@ -20,7 +19,7 @@ router.post("/create-checkout-session", async (req, res) => {
           name: item.name,
           images: [item.image],
         },
-        unit_amount: Math.round(item.price * 100), // price in cents
+        unit_amount: Math.round(item.price * 100),
       },
       quantity: item.quantity,
     }));

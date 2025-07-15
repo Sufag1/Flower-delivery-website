@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 const path = require("path");
 const passport = require("passport");
 const stripeRoutes = require("./routes/stripe");
-require("./utils/passport"); // this should come after passport is imported
+require("./utils/passport");
 
 
 dotenv.config();

@@ -36,16 +36,15 @@ const getFlower = async (req, res) => {
 const createFlower = async (req, res) => {
   try {
     console.log("BODY:", req.body);
-    console.log("FILE:", req.file);
+    console.log("FILE:", req.file); // Check what Multer/Cloudinary gives
 
     const { name, description, price, category } = req.body;
 
-    // Make sure the file exists and came from cloudinary
     if (!req.file || !req.file.path) {
       return res.status(400).json({ error: "Image upload failed" });
     }
 
-    const image = req.file.path; // this is already the Cloudinary URL
+    const image = req.file.path;
 
     const flower = new Flower({ name, description, price, category, image });
     const savedFlower = await flower.save();
@@ -56,6 +55,7 @@ const createFlower = async (req, res) => {
     res.status(500).json({ error: error.message || "Something went wrong" });
   }
 };
+
 
 
 // Update a flower

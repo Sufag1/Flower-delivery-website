@@ -34,17 +34,29 @@ const getFlower = async (req, res) => {
 
 // Create a new flower
 const createFlower = async (req, res) => {
-  const { name, description, price, category } = req.body;
-  const image = req.file?.path;
-
   try {
-    const flower = new Flower({ name, description, price, category, image  });
+    console.log("BODY:", req.body);
+    console.log("FILE:", req.file);
+
+    const { name, description, price, category } = req.body;
+
+    // Make sure the file exists and came from cloudinary
+    if (!req.file || !req.file.path) {
+      return res.status(400).json({ error: "Image upload failed" });
+    }
+
+    const image = req.file.path; // this is already the Cloudinary URL
+
+    const flower = new Flower({ name, description, price, category, image });
     const savedFlower = await flower.save();
+
     res.status(201).json(savedFlower);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    console.error("CREATE FLOWER ERROR:", error);
+    res.status(500).json({ error: error.message || "Something went wrong" });
   }
 };
+
 
 // Update a flower
 const updateFlower = async (req, res) => {

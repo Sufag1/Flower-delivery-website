@@ -1,6 +1,7 @@
 html, body, #root {
   height: 100%;
 }
+
 @font-face {
   font-family: 'Gilroy';
   src: url('./assets/Fonts/Gilroy-Regular.ttf') format('truetype');
@@ -18,6 +19,7 @@ html, body, #root {
   src: url('./assets/Fonts/Gilroy-SemiBold.ttf') format('truetype');
   font-weight: 600;
 }
+
 
 @font-face {
   font-family: 'Zapfino';

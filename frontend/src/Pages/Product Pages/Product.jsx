@@ -10,11 +10,10 @@ const Product = () => {
   const [error, setError] = useState("");
   const [count, setCount] = useState(1);
   const [randomFlowers, setRandomFlowers] = useState(null);
-
-  // ✅ Popup state
   const [popup, setPopup] = useState({ show: false, message: "", type: "" });
 
-  // ✅ Popup function
+
+
   const showPopup = (message, type) => {
     setPopup({ show: true, message, type });
     setTimeout(() => {
@@ -62,7 +61,6 @@ const Product = () => {
 };
 
 
-//just a comment 
   useEffect(() => {
     const fetchFlower = async () => {
       try {
@@ -99,7 +97,6 @@ const Product = () => {
 
   return (
     <>
-      {/* ✅ INSERT POPUP RIGHT HERE — inside the main return */}
       {popup.show && (
         <div className={`popup-message ${popup.type}`}>
           {popup.message}

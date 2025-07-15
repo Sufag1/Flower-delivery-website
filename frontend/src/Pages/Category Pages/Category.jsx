@@ -3,11 +3,7 @@ import { useState, useEffect } from "react";
 import './Category.css';
 import { Link } from "react-router-dom";
 import StampImage from "../../assets/fresh-hero.webp";
-// import FreshStamp from "../../assets/fresh.png";
-// import DriedStamp from "../../assets/dried.png";
-// import LiveStamp from "../../assets/live plants.png";
-// import AromaStamp from "../../assets/aroma.png";
-// import FreshenerStamp from "../../assets/fresheners.png";
+
 
 const Category = () => {
   const { categoryType } = useParams();
@@ -23,16 +19,7 @@ const Category = () => {
     fresheners: "Fresheners",
   };
 
-  // const stampMap = {
-  //   fresh: FreshStamp,
-  //   dried: DriedStamp,
-  //   live: LiveStamp,
-  //   aroma: AromaStamp,
-  //   fresheners: FreshenerStamp,
-  // };
-
   const categoryName = categoryMap[categoryType];
-  // const stampImage = stampMap[categoryType];
 
 
   useEffect(() => {

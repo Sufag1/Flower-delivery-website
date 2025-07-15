@@ -35,17 +35,28 @@ const getFlower = async (req, res) => {
 // Create a new flower
 const createFlower = async (req, res) => {
   const { name, description, price, category } = req.body;
-  const image = req.file?.path;
+  const image = req.file?.path || null;
 
   console.log("CREATE FLOWER BODY:", JSON.stringify(req.body, null, 2));
   console.log("Uploaded Image File:", req.file);
 
+  // Validate required fields
+  if (!name || !description || !price || !category) {
+    return res.status(400).json({ error: "All fields (name, description, price, category) are required" });
+  }
+
   try {
-    const flower = new Flower({ name, description, price, category, image });
+    const flower = new Flower({
+      name,
+      description,
+      price: Number(price), // Convert price to Number
+      category,
+      image,
+    });
     const savedFlower = await flower.save();
     res.status(201).json(savedFlower);
   } catch (error) {
-    console.error("❌ Failed to create flower:", error); 
+    console.error("❌ Failed to create flower:", error);
     res.status(400).json({ error: error.message });
   }
 };

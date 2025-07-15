@@ -34,28 +34,27 @@ const getFlower = async (req, res) => {
 
 // Create a new flower
 const createFlower = async (req, res) => {
+  console.log("Incoming POST /api/flowers request...");
+  console.log("req.body:", req.body);
+  console.log("req.file:", req.file);
+
+  const { name, description, price, category } = req.body;
+  const image = req.file?.path;
+
   try {
-    console.log("BODY:", req.body);
-    console.log("FILE:", req.file); // Check what Multer/Cloudinary gives
-
-    const { name, description, price, category } = req.body;
-
-    if (!req.file || !req.file.path) {
-      return res.status(400).json({ error: "Image upload failed" });
+    if (!image) {
+      throw new Error("Image was not uploaded successfully.");
     }
-
-    const image = req.file.path;
 
     const flower = new Flower({ name, description, price, category, image });
     const savedFlower = await flower.save();
 
     res.status(201).json(savedFlower);
   } catch (error) {
-    console.error("CREATE FLOWER ERROR:", error);
-    res.status(500).json({ error: error.message || "Something went wrong" });
+    console.error("Error in createFlower:", error.message);
+    res.status(500).json({ error: error.message });
   }
 };
-
 
 
 // Update a flower

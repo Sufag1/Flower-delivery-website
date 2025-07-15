@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "prettier": "^3.5.3",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "stripe": "^18.3.0"
   }
 }

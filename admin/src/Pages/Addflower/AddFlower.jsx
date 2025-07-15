@@ -53,9 +53,9 @@ const AddFlowers = () => {
       );
 
       if (!res.ok) {
-    const errText = await res.text();
-    throw new Error(errText);
-  }
+        const errText = await res.text();
+        throw new Error(errText);
+      }
 
       const result = await res.json();
 

@@ -11,7 +11,12 @@ const app = express();
 
 // Middlewares
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: [`${process.env.FRONTEND_URL}`,
+    `${process.env.ADMIN_URL}`,
+    `${process.env.LOCAL_HOST}`],
+  credentials: true,
+}));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Routes
@@ -21,7 +26,6 @@ app.get("/", (req, res) => {
 
 const flowerRoutes = require("./routes/flowerRoutes");
 app.use("/api/flowers", flowerRoutes);
-
 const userRouter = require("./routes/userRoutes");
 app.use("/api/users/", userRouter);
 

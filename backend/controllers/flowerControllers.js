@@ -33,18 +33,7 @@ const getFlower = async (req, res) => {
 };
 
 // Create a new flower
-const createFlower = async (req, res) => {
-  const { name, description, price, category } = req.body;
-  const image = req.file?.path;
 
-  try {
-    const flower = new Flower({ name, description, price, category, image  });
-    const savedFlower = await flower.save();
-    res.status(201).json(savedFlower);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
-};
 
 // Update a flower
 const updateFlower = async (req, res) => {

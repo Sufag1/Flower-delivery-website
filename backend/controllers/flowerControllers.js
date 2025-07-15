@@ -13,7 +13,7 @@ const getFlowers = async (req, res) => {
   }
 };
 
-// Get a single flower.
+// Get a single flower
 const getFlower = async (req, res) => {
   const { id } = req.params;
 
@@ -37,25 +37,14 @@ const createFlower = async (req, res) => {
   const { name, description, price, category } = req.body;
   const image = req.file?.path;
 
-  if (!name || !description || !price || !category) {
-    return res.status(400).json({ error: "Missing required fields" });
-  }
-
-  if (!image) {
-    return res.status(400).json({ error: "Image upload failed" });
-  }
-
   try {
-    const flower = new Flower({ name, description, price, category, image });
+    const flower = new Flower({ name, description, price, category, image  });
     const savedFlower = await flower.save();
     res.status(201).json(savedFlower);
   } catch (error) {
-    console.error("Create flower error:", error);
-    res.status(500).json({ error: "Failed to create flower" });
+    res.status(400).json({ error: error.message });
   }
 };
-
-
 
 // Update a flower
 const updateFlower = async (req, res) => {
@@ -103,12 +92,14 @@ const deleteFlower = async (req, res) => {
 };
 
 
+// Get four random flowers
+
 const getRandomFlowers = async (req, res) => {
   try {
     const flowers = await Flower.aggregate([{ $sample: { size: 4 } }]);
     res.json({ flowers });
   } catch (error) {
-    res.status(500).json({ message: "Failed to fetch random flowers." });
+    res.status(500).json({ message: "Failed to fetch suggested flowers." });
   }
 };
 

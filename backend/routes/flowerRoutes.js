@@ -16,7 +16,7 @@ const storage = new CloudinaryStorage({
   cloudinary,
   params: {
     folder: "flowers",
-    allowed_formats: ["jpg", "jpeg", "png", "gif"],
+    allowed_formats: ["jpg", "jpeg", "png", "gif", "webp"],
     public_id: (req, file) => `${Date.now()}-${file.originalname}`,
   },
 });
@@ -32,7 +32,6 @@ router.get("/random", getRandomFlowers);
 router.get("/", getFlowers);
 router.get("/:id", getFlower);
 
-// Apply upload middleware with error handling for POST
 router.post("/", (req, res, next) => {
   upload.single("image")(req, res, (err) => {
     if (err) {

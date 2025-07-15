@@ -21,13 +21,20 @@ const storage = new CloudinaryStorage({
   },
 });
 
+// Create multer instance
 const upload = multer({
   storage,
-  limits: { fileSize: 5 * 1024 * 1024 },
-}).single("image");
+  limits: { fileSize: 5 * 1024 * 1024 }, // Limit file size to 5MB
+});
 
+// Routes
+router.get("/random", getRandomFlowers);
+router.get("/", getFlowers);
+router.get("/:id", getFlower);
+
+// Apply upload middleware with error handling for POST
 router.post("/", (req, res, next) => {
-  upload(req, res, (err) => {
+  upload.single("image")(req, res, (err) => {
     if (err) {
       console.error("Multer error:", err);
       return res.status(400).json({ error: err.message });
@@ -36,10 +43,16 @@ router.post("/", (req, res, next) => {
   });
 }, createFlower);
 
-router.get("/random", getRandomFlowers);
-router.get("/", getFlowers);
-router.get("/:id", getFlower);
-router.patch("/:id", upload.single("image"), updateFlower);
+router.patch("/:id", (req, res, next) => {
+  upload.single("image")(req, res, (err) => {
+    if (err) {
+      console.error("Multer error:", err);
+      return res.status(400).json({ error: err.message });
+    }
+    next();
+  });
+}, updateFlower);
+
 router.delete("/:id", deleteFlower);
 
 module.exports = router;

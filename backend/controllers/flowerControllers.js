@@ -33,6 +33,32 @@ const getFlower = async (req, res) => {
 };
 
 // Create a new flower
+const createFlower = async (req, res) => {
+  const { name, description, price, category } = req.body;
+
+  try {
+    // Cloudinary image URL is available on req.file.path
+    if (!req.file || !req.file.path) {
+      return res.status(400).json({ error: "Image upload failed" });
+    }
+
+    const imageUrl = req.file.path;
+
+    const flower = new Flower({
+      name,
+      description,
+      price,
+      category,
+      image: imageUrl,
+    });
+
+    const savedFlower = await flower.save();
+    res.status(201).json(savedFlower);
+  } catch (error) {
+    console.error("Create flower error:", error);
+    res.status(500).json({ error: "Failed to create flower" });
+  }
+};
 
 
 // Update a flower

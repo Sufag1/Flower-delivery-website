@@ -3,6 +3,10 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const path = require("path");
+const passport = require("passport");
+const stripeRoutes = require("./routes/stripe");
+require("./utils/passport");
+
 
 dotenv.config();
 
@@ -13,19 +17,24 @@ const app = express();
 app.use(express.json());
 app.use(cors({
   origin: [`${process.env.FRONTEND_URL}`,
-    `${process.env.ADMIN_URL}`,
-    `${process.env.LOCAL_HOST}`],
+     `${process.env.ADMIN_URL}`,
+      `${process.env.LOCAL_HOST}`],
   credentials: true,
 }));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use(passport.initialize());
+app.use("/api/stripe", stripeRoutes);
+
 
 // Routes
 app.get("/", (req, res) => {
   res.send("Welcome to the Flower Delivery Website Backend");
+
 });
 
 const flowerRoutes = require("./routes/flowerRoutes");
 app.use("/api/flowers", flowerRoutes);
+
 const userRouter = require("./routes/userRoutes");
 app.use("/api/users/", userRouter);
 
@@ -40,4 +49,3 @@ mongoose.connect(process.env.MONGO_URI)
     .catch((error) => {
         console.error('DB connection error:', error);
     })
-

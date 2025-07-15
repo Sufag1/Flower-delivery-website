@@ -1,6 +1,8 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/userModels");
 const dotenv = require("dotenv");
+const passport = require("passport");
+
 
 // Creating a Token
 const createToken = (userId) => {
@@ -27,23 +29,23 @@ const userSignUp = async (req, res) => {
   }
 };
 
-// Login a user
-const userLogin = async (req, res) => {
-  const { email, password } = req.body;
-  try {
-    const user = await User.login(email, password);
+// Sign in a user
+const userLogin = (req, res, next) => {
+  passport.authenticate("local", { session: false }, (err, user, info) => {
+    if (err) return next(err);
+    if (!user) return res.status(401).json({ error: info.message });
+
     const token = createToken(user._id);
+
     res.status(200).json({
-      message: "Login Successful",
+      message: "Sign in Successful",
       data: {
         Username: user.username,
         UserId: user._id,
         token: token,
       },
     });
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
+  })(req, res, next);
 };
 
 // Get all Users

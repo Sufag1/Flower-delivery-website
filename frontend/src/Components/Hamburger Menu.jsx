@@ -20,7 +20,6 @@ const HamburgerMenu = ({ isOpen, onClose }) => {
         <ul className="main-links">
           <li><Link to="/signin" onClick={onClose}>Sign in</Link></li>
           <li><Link to="/shop" onClick={onClose}>Shop</Link></li>
-          <li><Link to="/service" onClick={onClose}>Service</Link></li>
           <li><Link to="/contact" onClick={onClose}>Contact</Link></li>
           <li><Link to="/about" onClick={onClose}>About us</Link></li>
         </ul>

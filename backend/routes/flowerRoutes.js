@@ -21,7 +21,7 @@ const storage = new CloudinaryStorage({
   cloudinary,
   params: {
     folder: "flowers", 
-    allowed_formats: ["jpg", "jpeg", "png", "gif"],
+    allowed_formats: ["jpg", "jpeg", "png", "gif", "webp"],
     public_id: (req, file) => `${Date.now()}-${file.originalname}`,
   },
 });

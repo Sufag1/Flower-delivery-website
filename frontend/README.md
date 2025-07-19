@@ -9,8 +9,6 @@ A full-stack MERN (MongoDB, Express.js, React, Node.js) e-commerce flower delive
 
 ---
 
-## 📦 Features
-
 ### 🌼 Customer Features
 - Browse flowers with images, categories, prices, and details
 - View flower details and see related flowers

@@ -125,6 +125,12 @@ hr {
     margin-top: 70px;
 }
 
+.empty-cart {
+    text-align: center;
+    color: #d9363e;
+    font-size: 50px;
+}
+
 @media (min-width: 768px) {
 
     .flower-cart-img {

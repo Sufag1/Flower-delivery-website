@@ -8,7 +8,7 @@ const Flowers = () => {
   const fetchFlowers = async () => {
     try {
       const res = await fetch(
-        "https://flower-delivery-website-m3-api.onrender.com/api/flowers"
+        `${process.env.REACT_APP_BACKEND_URL}`
       );
       const data = await res.json();
       console.log("Fetched data from backend:", data);

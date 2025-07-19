@@ -1,70 +1,131 @@
-# Getting Started with Create React App
+# 🌸 Flower Delivery Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack MERN (MongoDB, Express.js, React, Node.js) e-commerce flower delivery platform. This project allows users to browse beautiful flower bouquets, add them to their cart, securely check out using Stripe, and manage user authentication. An admin panel is also provided for managing flower products.
 
-## Available Scripts
+## 🔗 Live Demo
+🔗 [Frontend] (https://flower-delivery-website-frontend.onrender.com)
+🔗 [Admin] (https://flower-delivery-website-admin.onrender.com)
+🔗 [Backend] (https://flower-delivery-website-m3-api.onrender.com)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📦 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🌼 Customer Features
+- Browse flowers with images, categories, prices, and details
+- View flower details and see related flowers
+- Add items to cart with quantity selection
+- Local storage-based cart
+- Stripe Checkout integration
+- JWT-based login and signup
+- Google OAuth sign-in/sign-up
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🛠️ Admin Features
+- View all flowers in admin dashboard
+- Add new flowers (with image upload via Multer + Cloudinary)
+- Delete flowers
+- Protected routes using JWT middleware
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🧰 Tech Stack
 
-### `npm run build`
+| Frontend | Backend | Database | Tools |
+|----------|---------|----------|-------|
+| React.js | Express.js | MongoDB Atlas | Render (hosting) |
+| React Router | Node.js | Mongoose | Stripe API |
+| CSS Modules | Multer + Cloudinary | | JWT & Passport.js |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📁 Project Structure (Simplified)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+flower-delivery-website/
+├── client/ # React frontend
+│ ├── src/
+│ │ ├── components/ # UI Components
+│ │ ├── pages/ # SignIn, SignUp, Home, Cart, Admin, etc.
+│ │ ├── assets/ # Images, icons, etc.
+│ │ └── App.js
+├── backend/ # Node + Express backend
+│ ├── models/ # Mongoose models
+│ ├── controllers/ # Business logic
+│ ├── routes/ # API routes
+│ ├── middleware/ # JWT auth, Multer, etc.
+│ └── server.js
+├── .env # Environment variables
+└── README.md # You're here!
+---
 
-### `npm run eject`
+## 🔐 Authentication
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **JWT**: Used for protecting routes and identifying users.
+- **Google OAuth**: Allows users to sign in/up using their Google account.
+- **Passport.js**: Handles Google strategy integration.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 💳 Payments
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Stripe Checkout**: Redirects users to a hosted checkout page.
+- Cart data is passed to the backend and used to generate Stripe line items.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🖼️ Image Upload
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Admins can upload flower images.
+- **Multer** handles image upload.
+- **Cloudinary** stores and serves optimized images.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🚀 Getting Started (Local Setup)
 
-### Analyzing the Bundle Size
+flower-delivery-website/
+├── client/ # React frontend
+│ ├── src/
+│ │ ├── components/ # UI Components
+│ │ ├── pages/ # SignIn, SignUp, Home, Cart, Admin, etc.
+│ │ ├── assets/ # Images, icons, etc.
+│ │ └── App.js
+├── backend/ # Node + Express backend
+│ ├── models/ # Mongoose models
+│ ├── controllers/ # Business logic
+│ ├── routes/ # API routes
+│ ├── middleware/ # JWT auth, Multer, etc.
+│ └── server.js
+├── .env # Environment variables
+└── README.md # You're here!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Prerequisites:
+- Node.js
+- MongoDB Atlas
+- Cloudinary account
+- Stripe account
 
-### Making a Progressive Web App
+### 1. Clone the Repo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+git clone https://github.com/Sufag1/flower-delivery-website
+cd flower-delivery-website
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+👨‍💻 Author
+Developed by Farouq Abubakar
+💌 Contact me at farouqabubakar99@gmail.com
+- **GitHub Repo Link** (https://github.com/Sufag1/Flower-delivery-website)
+- **Author Info** → Farouq Abubakar, Sufag1, and farouqabubakar99a@gmail.com.  
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+---
+
+Let me know if you'd like to:
+- Add screenshots or GIFs to the README
+- Include specific GitHub repo links
+- Create separate setup instructions for frontend/backend on Render

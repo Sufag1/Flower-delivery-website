@@ -12,7 +12,7 @@ const Success = () => {
 
     const timer = setTimeout(() => {
       navigate("/home");
-    }, 5000);
+    }, 20000);
 
     return () => clearTimeout(timer);
   }, [navigate]);

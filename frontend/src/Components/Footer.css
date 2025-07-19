@@ -446,12 +446,12 @@ li {
         padding: 0;
     }
 
-    .shop {
-        padding: 20px 0px 0px 0px;
+    .shop h4, .shop ul {
+        padding: 20px 0px 0px 10px;
     }
-    .about-footer {
+    .about-footer{
         border: 1px solid #121212;
-        padding: 20px 0px 8px 0px;
+        padding: 20px 0px 0px 0px;
 
     }
 
